@@ -47,13 +47,15 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     cout << "Лабораторная работа №1" << endl;
+    cout << "\nЗадание 1." << endl;
     int a = 5, b = 4, c = 3;
     cout << "Изначальное значение a = " << a << endl;
     cout << "Изначальное значение b = " << b << endl;
     cout << "Изначальное значение c = " << c << endl;
     int summa = Sum(a, b, c);
     cout << "Сумма с начальными значениями = " << summa << endl;
-    DifferentMeanings(a, &b, c);    
+    cout << "\nЗадание 2." << endl;
+    DifferentMeanings(a, &b, c);
     summa = Sum(a, b, c);
     cout << "Сумма с новыми значениями = " << summa << endl;
     cout << "Значение a: " << a << endl;
@@ -66,6 +68,7 @@ int main()
     Massiv(arr);
     SortMassiv(arr, n);
     PrintMassiv(arr, n);
+
     system("pause");
     return 0;
 }
