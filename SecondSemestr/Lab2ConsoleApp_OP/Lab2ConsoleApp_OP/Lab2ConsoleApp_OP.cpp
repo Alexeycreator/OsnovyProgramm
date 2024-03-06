@@ -32,9 +32,11 @@ int CycleFactorial(int f) {
 	}
 	return factorial;
 }
-void Recursion_Qsort(int* arr, int n, int start, int end) {
+void Recursion_Qsort(int* arr, int start, int end) {
 	int pivot; // разрешающий элемент
 	int index; // индекс разрешающего элемента
+	int l_hold = start; //левая граница
+	int r_hold = end; // правая граница
 	pivot = arr[start];
 	while (start < end) // пока границы не сомкнутся
 	{
@@ -55,22 +57,85 @@ void Recursion_Qsort(int* arr, int n, int start, int end) {
 	}
 	arr[start] = pivot; // ставим разрешающий элемент на место
 	index = start;
+	start = l_hold;
+	end = r_hold;
 	if (start < index) // Рекурсивно вызываем сортировку для левой и правой части массива
-		Recursion_Qsort(arr, n, start, index - 1);
+		Recursion_Qsort(arr, start, index - 1);
 	if (end > index)
-		Recursion_Qsort(arr, n, index + 1, end);
+		Recursion_Qsort(arr, index + 1, end);
 }
 void PrintMassiv(int* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << "\t";
 	}
 }
-int Task13(int a, int m, int current = 1) {
-	if (m == 0) {
-		return 0;
+void Task3(int n, int i) {
+	int k = 1;
+	if (i <= n) {
+		cout << k << "\t";
+		Task3(n, i + 1);
 	}
-	cout << pow(a, current) << "\t";
-	Task13(a, m - 1, current + 1);
+}
+void Task4(int n, int i) {
+	int k = 1;
+	if (i < n) {
+		cout << k * pow(-1, i) << "\t";
+		Task4(n, i + 1);
+	}
+}
+void Task5(int n, int i, int k) {
+	if (i < n) {
+		cout << k * pow(-1, i) << "\t";
+		Task5(n, i + 1, k + 1);
+	}
+}
+void Task6(int n, int i) {
+	int k = 2; if (i < n) {
+		cout << pow(k, i) << "\t";
+		Task6(n, i + 1);
+	}
+}
+void Task7(int n, int i, int k) {
+	if (i < n) {
+		cout << pow(sqrt(k), 2) << "\t";
+		k = pow(k, 2);
+		Task7(n, i + 1, k);
+	}
+}
+void Task8(int n, int i, int k) {
+	if (i < n) {
+		if (k < 4) {
+			cout << k << "\t";
+
+			Task8(n, i + 1, k + 1);
+		}
+		else {
+			k = 0;
+			Task8(n, i + 1, k);
+		}
+	}
+}
+void Task10(int n, int i, int k) {
+	if (i < n) {
+		if (k < 2) {
+			cout << k << "\t";
+			Task10(n, i + 1, k + 1);
+		}
+		else {
+			cout << "a^" << i << "\t";
+			Task10(n, i + 1, k);
+		}
+	}
+}
+void Task13(int a, int m) {
+	if (m == 1)
+	{
+		cout << a + 1;
+	}
+	else
+	{
+		cout << pow(a, m) + 1 << endl;
+	}
 }
 int main()
 {
@@ -92,11 +157,43 @@ int main()
 	cout << "Вычисление факториала при помощи рекурсии: " << RecursionFactorial(f) << endl;
 	cout << "Вычисление суммы при помощи рекурсии: " << RecursionSum(arr, n) << endl;
 	//сортировка массива
-	Recursion_Qsort(arr, n, start, end);
+	Recursion_Qsort(arr, start, end);
 	cout << endl;
 	//вывод массива
 	PrintMassiv(arr, n);
-	//индивидуальное задание № 13
+	int k, i;
+	cout << "\nВведите значение i: ";
+	cin >> i;
+	cout << "Введите значение k: ";
+	cin >> k;
+	//индивидуальное задание № 3
+	cout << "Вывод задания 3: ";
+	Task3(n, i);
+	cout << endl;
+	//индивидуальное задание № 4
+	cout << "Вывод задания 4: ";
+	Task4(n, i);
+	cout << endl;
+	//индивидуальное задание № 5
+	cout << "Вывод задания 5: ";
+	Task5(n, i, k);
+	cout << endl;
+	//индивидуальное задание № 6
+	cout << "Вывод задания 6: ";
+	Task6(n, i);
+	cout << endl;
+	//индивидуальное задание № 7
+	cout << "Вывод задания 7: ";
+	Task7(n, i, k);
+	cout << endl;
+	//индивидуальное задание № 8
+	cout << "Вывод задания 8: ";
+	Task8(n, i, k);
+	cout << endl;
+	//индивидуальное задание № 10
+	cout << "Вывод задания 10: ";
+	Task10(n, i, k);
+	cout << endl;
 	cout << "\nВведите число a: ";
 	cin >> a;
 	cout << "Введите число m: ";
