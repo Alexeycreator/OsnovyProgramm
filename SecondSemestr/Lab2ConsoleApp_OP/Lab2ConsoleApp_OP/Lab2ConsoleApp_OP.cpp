@@ -69,6 +69,32 @@ void PrintMassiv(int* arr, int n) {
 		cout << arr[i] << "\t";
 	}
 }
+int f(int n) {
+	if (n == 0) {
+		return 1;
+	}
+	return f(n - 1) * n;
+}
+// a(n-1) + 1
+void Task1(int n) {
+	if (n == 1) {
+		cout << n;
+	}
+	else {
+		Task1(n - 1);
+		cout << ", " << n;
+	}
+}
+//a(n) = a(n-1) + 5, a(1) = 0
+void Task2(int n, int x = 0) {
+	if (n == 0) {
+		return;
+	}
+	else {
+		cout << x << ", ";
+		Task2(n - 1, x + 5);
+	}
+}
 void Task3(int n, int i) {
 	int k = 1;
 	if (i <= n) {
@@ -115,6 +141,13 @@ void Task8(int n, int i, int k) {
 		}
 	}
 }
+//a(n) = (2n-1)
+void Task9(int n) {
+	if (n != 0) {
+		Task9(n - 1);
+		cout << f((2 * n) - 1) << ", ";
+	}
+}
 void Task10(int n, int i, int k) {
 	if (i < n) {
 		if (k < 2) {
@@ -125,6 +158,25 @@ void Task10(int n, int i, int k) {
 			cout << "a^" << i << "\t";
 			Task10(n, i + 1, k);
 		}
+	}
+}
+//a(n) = a(n-1) + a^(n-1)
+void Task11(int a, int n, int sum = 0, int i = 0) {
+	if (i < n) {
+		sum += pow(a, i);
+		cout << sum << ", ";
+		Task11(a, n, sum, i + 1);
+	}
+}
+// a(n) = a ^ (n - 1) / ((n - 1)!)
+void Task12(int a, int n) {
+	if (n == 0) {
+		cout << "1, ";
+	}
+	else {
+		int element = pow(a, n) / f(n);
+		Task12(a, n - 1);
+		cout << element << ", ";
 	}
 }
 void Task13(int a, int m) {
@@ -140,7 +192,7 @@ void Task13(int a, int m) {
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	const int n = 4;
+	const int n = 6;
 	int arr[n];
 	int f, start, end;
 	int a, m;
@@ -166,8 +218,20 @@ int main()
 	cin >> i;
 	cout << "Введите значение k: ";
 	cin >> k;
+	cout << "Введите число a: ";
+	cin >> a;
+	cout << "Введите число m: ";
+	cin >> m;
+	//индивидуальное задание № 1
+	cout << "\nВывод задания 1: ";
+	Task1(n);
+	cout << endl;
+	//индивидуальное задание № 2
+	cout << "\nВывод задания 2: ";
+	Task2(n);
+	cout << endl;
 	//индивидуальное задание № 3
-	cout << "Вывод задания 3: ";
+	cout << "\nВывод задания 3: ";
 	Task3(n, i);
 	cout << endl;
 	//индивидуальное задание № 4
@@ -190,14 +254,23 @@ int main()
 	cout << "Вывод задания 8: ";
 	Task8(n, i, k);
 	cout << endl;
+	//индивидуальное задание № 9
+	cout << "Вывод задания 9: ";
+	Task9(n);
+	cout << endl;
 	//индивидуальное задание № 10
 	cout << "Вывод задания 10: ";
 	Task10(n, i, k);
 	cout << endl;
-	cout << "\nВведите число a: ";
-	cin >> a;
-	cout << "Введите число m: ";
-	cin >> m;
+	//индивидуальное задание № 11
+	cout << "Вывод задания 11: ";
+	Task11(a, n);
+	cout << endl;
+	//индивидуальное задание № 12
+	cout << "Вывод задания 12: ";
+	Task12(a, n);
+	cout << endl;
+	//индивидуальное задание № 13
 	cout << "Последовательность a^(m+1) для a = " << a << " и для m = " << m << ":\n";
 	Task13(a, m);
 	cout << endl;
