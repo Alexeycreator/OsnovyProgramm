@@ -43,9 +43,9 @@ void SortMassiv(int** mass, int n, int m) {
 	}
 }
 //Сложение массивов символов
-char* SumMassiv(char charMassiv[][m]) {
+char* SumMassiv(char charMassiv[][6], int n, int m) {
 	int k = 0;
-	char* resMassiv = new char[n * m * 2];
+	char* resMassiv = new char[n * m + 1];
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m - 1; j++) {
 			resMassiv[k++] = charMassiv[i][j];
@@ -60,7 +60,7 @@ char* SumMassiv(char charMassiv[][m]) {
 	resMassiv[0] = toupper(resMassiv[0]);
 	return resMassiv;
 }
-char SortMassiv(char charMassiv[][m], int n, int m) {
+char SortMassiv(char charMassiv[][6], int n, int m) {
 	for (int i = 0; i < n - 1; i++) {
 		for (int j = 0; j < n - i - 1; j++) {
 			if (strcmp(charMassiv[j], charMassiv[j + 1]) > 0) {
@@ -99,9 +99,9 @@ int main()
 	PrintMassiv(mass, n, m);
 	cout << "\nЗадание 2." << endl;
 	char _charMass[n][m] = { {"world"}, {"hello"} };
-	const char* resMass = new char[n * m * 2];
+	const char* resMass = new char[n * m + 1];
 	//сложение массива символов
-	resMass = SumMassiv(_charMass);
+	resMass = SumMassiv(_charMass, n, m);
 	cout << "Сумма массива символов: " << resMass << endl;
 	//сортировка массива символов
 	SortMassiv(_charMass, n, m);
@@ -113,11 +113,11 @@ int main()
 		cout << endl;
 	}
 	//вывод сложения массива символов отсортированных
-	resMass = SumMassiv(_charMass);
+	resMass = SumMassiv(_charMass, n, m);
 	cout << "Сумма массива символов: " << resMass << endl;
 	cout << "\nЗадание 3." << endl;
-	char* (*ptr)(char[][m]) = &SumMassiv;
-	cout << "Сумма символьного массива: " << (*ptr)(_charMass) << endl;
+	char* (*ptr)(char[][m], int, int) = &SumMassiv;
+	cout << "Сумма символьного массива: " << (*ptr)(_charMass, n, m) << endl;
 	int(*pf2)(int**, int, int) = &SumMassiv;
 	int resultTask3 = (*pf2)(mass, n, m);
 	cout << "Сумма целочисленного массива: " << resultTask3 << endl;

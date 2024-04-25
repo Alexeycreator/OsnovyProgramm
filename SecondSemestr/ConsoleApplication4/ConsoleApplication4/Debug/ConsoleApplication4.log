@@ -1,9 +1,9 @@
 ﻿  ConsoleApplication4.cpp
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(15,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(62): message : выполняется компиляция ссылки на экземпляр шаблон функции "void SortMassiv<float**>(T,int,int)"
+C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(17,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(67): message : выполняется компиляция ссылки на экземпляр шаблон функции "void SortMassiv<float**>(T,int,int)"
           with
           [
               T=float **
           ]
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(17,23): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(19,23): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   ConsoleApplication4.vcxproj -> C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\ConsoleApplication4\Debug\ConsoleApplication4.exe

@@ -7,15 +7,20 @@ const int m = 5;
 template<class T> void SortMassiv(T mass, int n, int m) {
 	for (int i = 0; i < n; i++)
 	{
+		bool flag = false;
 		for (int j = 0; j < m - 1; j++)
 		{
 			for (int k = 0; k < m - j - 1; k++) {
 				if (mass[i][k] > mass[i][k + 1])
 				{
+					flag = true;
 					int temp = mass[i][k];
 					mass[i][k] = mass[i][k + 1];
 					mass[i][k + 1] = temp;
 				}
+			}
+			if (!flag) {
+				break;
 			}
 		}
 	}
