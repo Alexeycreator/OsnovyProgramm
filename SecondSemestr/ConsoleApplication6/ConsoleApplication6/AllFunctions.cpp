@@ -2,40 +2,53 @@
 #include "AllFunctions.h"
 using namespace std;
 
-void InputMass(int* arr, int n) {
+extern int dir = 0;
+
+static void InputMass(int* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		arr[i] = 1 + rand() % 50;
 	}
 }
-void SortMass(int* arr, int n) {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+static void SortMass(int* arr, int n) {
+	if (dir == 0) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+	}
+	else {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n - 1; j++) {
+				if (arr[j] < arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
 			}
 		}
 	}
 }
-void PrintScreenMass(int* arr, int n) {
+static void PrintScreenMass(int* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
 }
-void WriteToFile(int* arr, int n, char* filePath) {
-	FILE* _writeToFile;
-	errno_t err = fopen_s(&_writeToFile, filePath, "w");
-	if (_writeToFile != NULL || err != 0) {
-		for (int i = 0; i < n; i++) {
-			fprintf(_writeToFile, "%d\n", arr[i]);
-		}
-		fclose(_writeToFile);
-		cout << "Массив записан в файл успешно!" << endl;
-	}
-	else {
-		cout << "Не удалось открыть файл!" << endl;
-	}
+void scriptmas(int* mas1, int* mas2, int size1, int size2) {
+	static int count = 0;
+	InputMass(mas1, size1);
+	SortMass(mas1, size1);
+	PrintScreenMass(mas1, size1);
+	InputMass(mas2, size2);
+	SortMass(mas2, size2);
+	PrintScreenMass(mas2, size2);
+	cout << endl << "Количество вызовов функции: " << ++count << endl;
+	dir++;
 }
+
 
