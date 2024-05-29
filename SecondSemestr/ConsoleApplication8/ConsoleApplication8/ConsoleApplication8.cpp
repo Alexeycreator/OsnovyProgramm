@@ -128,7 +128,7 @@ void ToOPZ(char str[], char OPZstr[])
 	}
 	else cout << "ERROR";
 }
-int OPZ(char expression[]) {
+int ReversePolishNotation(char expression[]) {
 	Node* stack = NULL;
 	int i = 0;
 	while (expression[i] != '\0') {
@@ -153,12 +153,12 @@ int OPZ(char expression[]) {
 	return Izvl(stack) - '0';
 }
 void CheckDel(char *str) {
-	int res = OPZ(str);
+	int res = ReversePolishNotation(str);
 	if (res == -1) {
 		cout << "Посчитать не получилось, из-за ошибки." << endl;
 	}
 	else {
-		cout << "\nОтвет: " << OPZ(str) << endl;
+		cout << "\nОтвет: " << ReversePolishNotation(str) << endl;
 	}
 }
 int main()
