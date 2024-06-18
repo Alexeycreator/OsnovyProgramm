@@ -227,43 +227,278 @@ template <typename T> T dequeue(NodeTemplate<T>*& front, NodeTemplate<T>*& rear)
 //  14)	Написать функцию перебора элементов линейной динамической структуры, организованной по принципу очереди. (значения выводятся на экран, сами элементы при этом не удаляются)
 void PrintQ(Node* elem) {
 	Node* temp = elem;
-	while (temp) {
+	while (temp != NULL) {
 		cout << temp->data << "\t";
 		temp = temp->next;
 	}
 	cout << endl;
 }
 //  15)	Написать функцию перебора элементов линейной динамической структуры организованной по принципу стека. (значения выводятся на экран, сами элементы при этом не удаляются)
-
+void PrintStack(Node* stack) {
+	Node* temp = stack;
+	while (temp != NULL) {
+		cout << temp->data << "\t";
+		temp = temp->next;
+	}
+	cout << endl;
+}
 //  16)	Написать функцию перебора элементов линейной динамической кольцевой структуры.
+struct Elem {
+	int data;
+	Elem* next;
+};
+Elem* head = NULL;
+void Append(int value, Elem*& head) {
+	Elem* temp = new Elem;
+	temp->data = value;
+	temp->next = NULL;
+	if (head == NULL) {
+		head = temp;
+		temp->next = head;
+	}
+	else {
+		Elem* newElem = head;
+		while (newElem->next != head) {
+			newElem = newElem->next;
+		}
+		newElem->next = temp;
+		newElem->next = head;
+	}
+}
+void Output(Elem* head) { // перебор
+	if (head == nullptr) {
+		cout << "This list is empty!" << endl;
+	}
+	else {
+		Elem* temp = head;
+		do {
+			cout << temp->data << " ";
+			temp = temp->next;
+		} while (temp != head);
+		cout << endl;
+	}
+}
 
 //  17)	Написать шаблон функции, возвращающей сумму элементов линейного динамического списка.
+template<class T> struct MyStruct1
+{
+	T data;
+	MyStruct1* next;
+};
+template<class T> T Sum(MyStruct1<T>* s) {
+	int summ = 0;
+	while (s != NULL) {
+		summ += s->data;
+		s = s->next;
+	}
+	return summ;
+}
 
 //  18)	Написать шаблон функции, возвращающей сумму элементов линейного динамического кольцевого списка.
+template<class T> T Sum(MyStruct1<T>*& head) {
+	if (head == NULL) {
+		cout << "Error! List is empty." << endl;
+		return -1;
+	}
+	else {
+		T result = 0;
+		MyStruct1<T>* temp = head;
+		do {
+			result += temp->data;
+			temp = temp->next;
+		} while (temp != head);
+		return result;
+	}
+}
 
 //  19)	Написать функцию добавления элемента в конец двунаправленного линейного списка.
+struct Node2
+{
+	int data; 
+	Node2* prev;
+	Node2* next;
+};
+void AppendToend(Node2*& head, int newData) {
+	Node2* newNode = new Node2;
+	newNode->data = newData;
+	newNode->next = nullptr;
+	if (head == nullptr) {
+		newNode->prev = nullptr;
+		head = newNode;
+		return;
+	}
+	Node2* lastNode = head;
+	while (lastNode->next != nullptr) {
+		lastNode = lastNode->next;
+	}
+	lastNode->next = newNode;
+	newNode->prev = lastNode;
+}
 
 //  20)	Написать функцию добавления элемента в начало двунаправленного линейного списка.
+void Prepend(Node2*& head, int newData) {
+	Node2* newNode = new Node2;
+	newNode->data = newData;
+	newNode->prev = nullptr;
+	if (head == nullptr) {
+		head = newNode;
+		newNode->next = nullptr;
+	}
+	else {
+		head->prev = newNode;
+		newNode->next = head;
+		head = newNode;
+	}
+}
 
 //  21)	Написать функцию добавления элемента в конец двунаправленного кольцевого линейного списка.
+void Append_K(Node2*& head, int value) {
+	Node2* newNode = new Node2{ value, nullptr, nullptr };
+	if (head == nullptr) {
+		head = newNode;
+		head->next = head;
+		head->prev = head;
+	}
+	else {
+		Node2* temp = head->prev;
+		temp->next = newNode;
+		newNode->prev = temp;
+		newNode->next = head;
+		head->prev = newNode;
+	}
+}
 
 //  22)	Написать функцию добавления элемента в начало двунаправленного линейного кольцевого списка.
+void Append_N(Node2*& head, int value) {
+	Node2* newNode = new Node2{ value, nullptr, nullptr };
+	if (head == nullptr) {
+		head = newNode;
+		head->next = head;
+		head->prev = head;
+	}
+	else {
+		newNode->next = head;
+		head->prev->next = newNode;
+		newNode->prev = head->prev;
+		head->prev = newNode;
+		head = newNode;
+	}
+}
 
 //  23)	Написать функцию удаления элемента по ключу из однонаправленного линейного списка.
+void deleteNode(Node2*& head, int key) {
+	Node2* temp = head;
+	Node2* prev = nullptr;
+	if (temp != nullptr && temp->data == key) {
+		head = temp->next;
+		delete temp;
+		return;
+	}
+	while (temp != nullptr && temp->data != key) {
+		prev = temp;
+		temp = temp->next;
+	}
+	if (temp == nullptr) {
+		return;
+	}
+	prev->next = temp->next;
+	delete(temp);
+}
 
 //  24)	Написать функцию удаления элемента по ключу из двунаправленного линейного списка.
+void deleteNode(Node2*& head, int key) {
+	Node2* temp = head;
+	while (temp != nullptr && temp->data != key) {
+		temp = temp->next;
+	}
+	if (temp == nullptr) {
+		cout << "Узел с ключом " << key << " не найден в списке." << endl;
+		return;
+	}
+	if (temp->prev != nullptr) {
+		temp->prev->next = temp->next;
+	}
+	else {
+		head = temp->next;
+	}
+	if (temp->next != nullptr) {
+		temp->next->prev = temp->prev;
+	}
+	delete temp;
+}
 
 //  25)	Написать функцию вставки элемента в однонаправленный линейный список. 
 //      Вставка осуществляется за элементом с указанным значением ключевого поля или в конец списка, если таких значений в списке нет.
+void pushByKey(Node*& elem, int key, int n) {
+	Node* current = elem;
+	while (current != NULL && current->data != key) {
+		current = current->next;
+	}
+	if (current != NULL) {
+		Node* newElem = new Node{ n, current->next };
+		current->next = newElem;
+	}
+}
 
 //  26)	Написать функцию вставки элемента в двунаправленный линейный список. 
 //      Вставка осуществляется за элементом с указанным значением ключевого поля или в конец списка, если таких значений в списке нет.
+void insertAfter(Node2* prevNode, int newData, int key) {
+	if (prevNode == nullptr) {
+		cout << "Предыдущий узел не может быть NULL." << endl;
+		return;
+	}
+	if (prevNode->data == key) {
+		Node2* newNode = new Node2{ newData, prevNode, prevNode->next };
+		if (prevNode->next != nullptr) {
+			prevNode->next->prev = newNode;
+		}
+		prevNode->next = newNode;
+	}
+	else {
+		insertAfter(prevNode->next, newData, key);
+	}
+}
 
 //  27)	Написать функцию вставки элемента в однонаправленный линейный список. 
 //      Вставка осуществляется перед элементом с указанным значением ключевого поля или в начало списка, если таких значений в списке нет.
+void insertBefore(Node2*& head, int newData, int key) {
+	Node2* newNode = new Node2{ newData, nullptr };
+	if (head == nullptr || head->data == key) {
+		newNode->next = head;
+		head = newNode;
+		return;
+	}
+	Node2* current = head;
+	while (current->next != nullptr && current->next->data != key) {
+		current = current->next;
+	}
+	newNode->next = current->next;
+	current->next = newNode;
+}
 
 //  28)	Написать функцию вставки элемента в двунаправленный линейный список. 
 //      Вставка осуществляется перед элементом с указанным значением ключевого поля или в начало списка, если таких значений в списке нет.
+void insert(Node2*& head, int newData, int key) {
+	Node2* newNode = new Node2{ newData, nullptr, nullptr };
+	if (head == nullptr || head->data == key) {
+		newNode->next = head;
+		if (head != nullptr) {
+			head->prev = newNode;
+		}
+		head = newNode;
+		return;
+	}
+	Node2* current = head;
+	while (current->next != nullptr && current->next->data != key) {
+		current = current->next;
+	}
+	newNode->next = current->next;
+	newNode->prev = current;
+	if (current->next != nullptr) {
+		current->next->prev = newNode;
+	}
+	current->next = newNode;
+}
 
 //  29)	Написать функцию поиска в двоичном дереве. (функция должна вернуть адрес элемента) 
 Tree* SearchTree(Tree* root, int value) {
@@ -413,13 +648,19 @@ int main()
 
 	//блок задания 14
 	cout << "\nЗадание 14." << endl;
-	PrintQ(stack);
+	PrintQ(queue.h);
 
 	//блок задания 15
 	cout << "\nЗадание 15." << endl;
+	PrintStack(stack);
 
 	//блок задания 16
 	cout << "\nЗадание 16." << endl;
+	Elem* _elem = NULL;
+	for (int i = 0; i < n; i++) {
+		Append(arr[i], _elem);
+	}
+	Output(_elem);
 
 	//блок задания 17
 	cout << "\nЗадание 17." << endl;
@@ -429,9 +670,26 @@ int main()
 
 	//блок задания 19
 	cout << "\nЗадание 19." << endl;
+	Node2* S = NULL;
+	for (int i = 0; i < n; i++) {
+		AppendToend(S, arr[i]);
+	}
+	Node2* current = S;
+	while (current != NULL) {
+		cout << current->data << "\t";
+		current = current->next;
+	}
 
 	//блок задания 20
 	cout << "\nЗадание 20." << endl;
+	for (int i = 0; i < n; i++) {
+		Prepend(S, arr[i]);
+	}
+	Node2* current2 = S;
+	while (current2 != NULL) {
+		cout << current2->data << "\t";
+		current2 = current2->next;
+	}
 
 	//блок задания 21
 	cout << "\nЗадание 21." << endl;
