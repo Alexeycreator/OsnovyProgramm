@@ -101,7 +101,14 @@ void AddQueue(Queue& queue, int value) {
 	}
 }
 //  7) Написать функцию извлечения элемента из линейной динамической структуры, организованной по принципу стека.
-
+int izvlStack(Node*& stack)
+{
+	Node* temp = stack;
+	int res = temp->data;
+	stack = temp->next;
+	delete(temp);
+	return res;
+}
 //  8) Написать функцию извлечения элемента из линейной динамической структуры, организованной по принципу очереди.
 int IzvlQueue(Queue& queue) {
 	Node* temp = queue.h;
@@ -173,13 +180,59 @@ template<class T> void AddStackTemplate(T value) {
 	top<T> = temp;
 }
 //  11)	Написать шаблон функции добавления элемента в линейную динамическую структуру, организованную по принципу очереди.
-
+template<class T> struct NodeTempl
+{
+	T data;
+	NodeTempl* next;
+};
+template<class T> void AddQueueTemplate(NodeTempl<T>*& elem, NodeTempl<T>* elem2, T value) {
+	NodeTempl<T>* temp = new NodeTempl<T>;
+	temp->data = value;
+	temp->next = NULL;
+	if (elem2 == NULL) {
+		elem = elem2 = temp;
+	}
+	else {
+		elem2->next = temp;
+		elem2 = temp;
+	}
+}
 //  12)	Написать шаблон функции извлечения элемента из линейной динамической структуры, организованной по принципу стека.
-
+template<class T> T IzvlStack2(NodeTemplate<T>*& stack) {
+	if (stack == NULL) {
+		return T();
+	}
+	T res = stack->data;
+	NodeTemplate<T>* temp = stack;
+	stack = stack->next;
+	delete temp;
+	return res;
+}
 //  13)	Написать шаблон функции извлечения элемента из линейной динамической структуры, организованной по принципу очереди.
-
+template <typename T> T dequeue(NodeTemplate<T>*& front, NodeTemplate<T>*& rear) {
+	if (front == nullptr) {
+		return T();
+	}
+	T value = front->data;
+	NodeTemplate<T>* temp = front;
+	if (front == rear) {
+		front = rear = nullptr;
+	}
+	else {
+		front = front->next;
+	}
+	delete temp;
+	return value;
+}
 //  14)	Написать функцию перебора элементов линейной динамической структуры, организованной по принципу очереди. (значения выводятся на экран, сами элементы при этом не удаляются)
-
+void PrintQ(Node* elem) {
+	Node* temp = elem;
+	while (temp) {
+		cout << temp->data << "\t";
+		temp = temp->next;
+	}
+	cout << endl;
+}
 //  15)	Написать функцию перебора элементов линейной динамической структуры организованной по принципу стека. (значения выводятся на экран, сами элементы при этом не удаляются)
 
 //  16)	Написать функцию перебора элементов линейной динамической кольцевой структуры.
@@ -264,41 +317,51 @@ int main()
 	cout << "Исходный массив: \n";
 	PrintMassiv(arr, n);
 	cout << "Элементы добавлены!" << endl;
+
 	//блок задания 1
 	cout << "\nЗадание 1." << endl;
 	Tree* _tree = NULL;
 	for (int i = 0; i < n; i++) {
 		AddTree(arr[i], _tree);
 	}
+
 	//блок задания 2
 	cout << "\nЗадание 2." << endl;
 	cout << "Симметричный обход." << endl;
 	TreePrint1(_tree);
 	cout << endl;
+
 	//блок задания 3
 	cout << "\nЗадание 3." << endl;
 	cout << "Прямой обход." << endl;
 	TreePrint2(_tree);
 	cout << endl;
+
 	//блок задания 4
 	cout << "\nЗадание 4." << endl;
 	cout << "Обход снизу." << endl;
 	TreePrint3(_tree);
 	cout << endl;
+
 	//блок задания 5
 	cout << "\nЗадание 5." << endl;
 	Node* stack = NULL;
 	for (int i = 0; i < n; i++) {
 		AddStack(stack, arr[i]);
 	}
+
 	//блок задания 6
 	cout << "\nЗадание 6." << endl;
 	Queue queue = { NULL,NULL };
 	for (int i = 0; i < n; i++) {
 		AddQueue(queue, arr[i]);
 	}
+
 	//блок задания 7
 	cout << "\nЗадание 7." << endl;
+	for (int i = 0; i < n; i++) {
+		cout << izvlStack(stack) << endl;
+	}
 	//блок задания 8
 	cout << "\nЗадание 8." << endl;
 	for (int i = 0; i < n; i++) {
@@ -309,53 +372,91 @@ int main()
 			cout << "Данных нет" << endl;
 		}
 	}
+
 	//блок задания 9
 	cout << "\nЗадание 9." << endl;
 	int start = 0;
 	int end = n - 1;
 	Recursion_Qsort(arr, start, end);
 	PrintMassiv(arr, n);
+
 	//блок задания 10
 	cout << "\nЗадание 10." << endl;
 	for (int i = 0; i < n; i++) {
 		AddStackTemplate(arr[i]);
 	}
+
 	//блок задания 11
 	cout << "\nЗадание 11." << endl;
+	NodeTempl<int>* _nodeTempl = { NULL };
+	NodeTempl<int>* _nodeTempl2 = { NULL };
+	for (int i = 0; i < n; i++) {
+		AddQueueTemplate(_nodeTempl, _nodeTempl2, arr[i]);
+	}
+
 	//блок задания 12
 	cout << "\nЗадание 12." << endl;
+	NodeTemplate<int>* _node = NULL;
+	for (int i = 0; i < n; i++) {
+		cout << IzvlStack2(_node) << "\t";
+	}
+	cout << endl;
+
 	//блок задания 13
 	cout << "\nЗадание 13." << endl;
+	NodeTemplate<int>* _q1 = { NULL };
+	NodeTemplate<int>* _q2 = { NULL };
+	for (int i = 0; i < n; i++) {
+		cout << dequeue(_q1, _q2) << "\t";
+	}
+	cout << endl;
+
 	//блок задания 14
 	cout << "\nЗадание 14." << endl;
+	PrintQ(stack);
+
 	//блок задания 15
 	cout << "\nЗадание 15." << endl;
+
 	//блок задания 16
 	cout << "\nЗадание 16." << endl;
+
 	//блок задания 17
 	cout << "\nЗадание 17." << endl;
+
 	//блок задания 18
 	cout << "\nЗадание 18." << endl;
+
 	//блок задания 19
 	cout << "\nЗадание 19." << endl;
+
 	//блок задания 20
 	cout << "\nЗадание 20." << endl;
+
 	//блок задания 21
 	cout << "\nЗадание 21." << endl;
+
 	//блок задания 22
 	cout << "\nЗадание 22." << endl;
+
 	//блок задания 23
 	cout << "\nЗадание 23." << endl;
+
 	//блок задания 24
 	cout << "\nЗадание 24." << endl;
+
 	//блок задания 25
 	cout << "\nЗадание 25." << endl;
+
 	//блок задания 26
 	cout << "\nЗадание 26." << endl;
+
 	//блок задания 27
 	cout << "\nЗадание 27." << endl;
+
 	//блок задания 28
 	cout << "\nЗадание 28." << endl;
+
 	//блок задания 29
 	cout << "\nЗадание 29." << endl;
 	cout << "Элементы, находящиеся в дереве: " << endl;
@@ -370,6 +471,7 @@ int main()
 	else {
 		cout << "Элемент " << _address << " не существует в дереве." << endl;
 	}
+
 	//блок задания 30
 	cout << "\nЗадание 30." << endl;
 	int _address2;
