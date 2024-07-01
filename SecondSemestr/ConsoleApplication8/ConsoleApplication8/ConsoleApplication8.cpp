@@ -89,44 +89,41 @@ char ApplyOperations(char operation, int a, int b) {
 }
 void ToOPZ(char str[], char OPZstr[])
 {
-	if (Check(str)) {
-		int i = 0, j = 0;
-		Node* stack = NULL;
-		while (str[i] != '\0') {
-			if (str[i] == '(') AddElem(stack, str[i]);
-			else if (str[i] == ')') {
-				while (stack != nullptr && stack->data != '(') {
-					OPZstr[j] = Izvl(stack);
-					cout << OPZstr[j];
-					j++;
-				}
-				if (stack != nullptr && stack->data == '(') {
-					Izvl(stack);
-				}
-			}
-			else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
-				while (stack != nullptr && GetPriority(stack->data) >= GetPriority(str[i])) {
-					OPZstr[j] = Izvl(stack);
-					cout << OPZstr[j];
-					j++;
-				}
-				AddElem(stack, str[i]);
-			}
-			else {
-				OPZstr[j] = str[i];
+	int i = 0, j = 0;
+	Node* stack = NULL;
+	while (str[i] != '\0') {
+		if (str[i] == '(') AddElem(stack, str[i]);
+		else if (str[i] == ')') {
+			while (stack != nullptr && stack->data != '(') {
+				OPZstr[j] = Izvl(stack);
 				cout << OPZstr[j];
 				j++;
 			}
-			i++;
+			if (stack != nullptr && stack->data == '(') {
+				Izvl(stack);
+			}
 		}
-		while (stack != nullptr) {
-			OPZstr[j] = Izvl(stack);
+		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
+			while (stack != nullptr && GetPriority(stack->data) >= GetPriority(str[i])) {
+				OPZstr[j] = Izvl(stack);
+				cout << OPZstr[j];
+				j++;
+			}
+			AddElem(stack, str[i]);
+		}
+		else {
+			OPZstr[j] = str[i];
 			cout << OPZstr[j];
 			j++;
 		}
-		OPZstr[j] = '\0';
+		i++;
 	}
-	else cout << "ERROR";
+	while (stack != nullptr) {
+		OPZstr[j] = Izvl(stack);
+		cout << OPZstr[j];
+		j++;
+	}
+	OPZstr[j] = '\0';
 }
 int ReversePolishNotation(char expression[]) {
 	Node* stack = NULL;
@@ -152,13 +149,24 @@ int ReversePolishNotation(char expression[]) {
 	}
 	return Izvl(stack) - '0';
 }
-void CheckDel(char *str) {
+void CheckDel(char* str) {
 	int res = ReversePolishNotation(str);
 	if (res == -1) {
 		cout << "Посчитать не получилось, из-за ошибки." << endl;
 	}
 	else {
 		cout << "\nОтвет: " << ReversePolishNotation(str) << endl;
+	}
+}
+void CheckError(char* str, char* mass) {
+	if (Check(str)) {
+		cout << "До преобразования:\n" << mass << endl;
+		cout << "После преобразования:\n";
+		ToOPZ(mass, str);
+		CheckDel(str);
+	}
+	else {
+		cout << "Error" << endl;
 	}
 }
 int main()
@@ -168,10 +176,7 @@ int main()
 	char mass[100], str[100];
 	cout << "Введите выражение: ";
 	cin.getline(mass, 100);
-	cout << "До преобразования:\n" << mass << endl;
-	cout << "После преобразования:\n";
-	ToOPZ(mass, str);
-	CheckDel(str);
+	CheckError(str, mass);
 	system("pause");
 	return 0;
 }
