@@ -1,5 +1,2 @@
 ﻿  PraktikaConsoleApplication.cpp
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\Практика учебная\PraktikaConsoleApplication\PraktikaConsoleApplication\PraktikaConsoleApplication.cpp(252,8): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\Практика учебная\PraktikaConsoleApplication\PraktikaConsoleApplication\PraktikaConsoleApplication.cpp(253,8): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\Практика учебная\PraktikaConsoleApplication\PraktikaConsoleApplication\PraktikaConsoleApplication.cpp(529,29): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
   PraktikaConsoleApplication.vcxproj -> C:\Users\Алексей\Desktop\Учеба\github\OsnovyProgramm\SecondSemestr\Практика учебная\PraktikaConsoleApplication\x64\Debug\PraktikaConsoleApplication.exe
