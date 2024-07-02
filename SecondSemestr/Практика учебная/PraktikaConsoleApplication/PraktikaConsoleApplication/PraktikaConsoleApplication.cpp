@@ -329,11 +329,6 @@ void Task14_block2() {
 	cin >> n;
 	cout << n * (n + 1) / 2 << "\n";
 }
-//Задание 15 (блок 2)
-void Task15_block2() {
-	printf("Базовае типы языка с++\n");
-	printf("Hello student!\n");
-}
 
 
 
@@ -368,13 +363,13 @@ void Task2_block3() {
 //Задание 3 (блок 3)
 void Task3_block3() {
 	int a;
-	cout << "Enter your number: ";
+	cout << "Введиет число: ";
 	cin >> a;
 	if (a % 3 == 0) {
-		cout << "\nDivisible by three" << endl;
+		cout << "\nЧисло делится на 3" << endl;
 	}
 	else {
-		cout << "\nNot divisible!" << endl;
+		cout << "\nНе делится!" << endl;
 	}
 }
 //Задание 4 (блок 3)
@@ -482,6 +477,64 @@ void Task9_block3() {
 		cout << "Ошибка. Такого дня недели не существует!";
 	}
 }
+//Задание 10 (блок 3)
+void Task10_block3() {
+	cout << "task_3_variant10\n";
+	string player1, player2;
+	cin >> player1 >> player2;
+	if (player1 == player2) {
+		cout << "Ничья" << endl;
+	}
+	if ((player1 == "камень" && player2 == "ножницы") || (player1 == "ножницы" && player2 == "бумага") || (player1 == "бумага" && player2 == "камень"))
+	{
+		cout << "Игрок 1 выиграл" << endl;
+	}
+	else {
+		cout << "Игрок 2 выиграл" << endl;
+	}
+}
+//Задание 11 (блок 3)
+void Task11_block3() {
+	string month;
+	cin >> month;
+	if ((month == "september") || (month == "october") || (month == "november")) {
+		cout << "autumn" << endl;
+	}
+	else if ((month == "december") || (month == "january") || (month == "february")) {
+		cout << "winter" << endl;
+	}
+	else if ((month == "june") || (month == "july") || (month == "august")) {
+		cout << "summer" << endl;
+	}
+	else if ((month == "march") || (month == "april ") || (month == "may")) {
+		cout << "spring" << endl;
+	}
+	else {
+		cout << "error" << endl;
+	}
+
+}
+//Задание 12 (блок 3)
+void Task12_block3() {
+	int price, discount;
+	cout << "Цена на товар: ";
+	cin >> price;
+	cout << "Скидка в процентах: ";
+	cin >> discount;
+	if (price <= 150 && discount <= 50) {
+		cout << "«Ошибка 1. Низкая цена» – если цена не превышает 150 руб., но скидка меньше или равна 50 %";
+	}
+	else if (price > 150 && discount > 50) {
+		cout << "«Ошибка 2. Большая скидка» – если скидка больше 50 %, но цена превышает 150 руб.";
+	}
+	else if (price <= 150 && discount > 50) {
+		cout << "«Ошибка 3. Оба условия» – если оба условия не соблюдаются";
+	}
+	else {
+		float price_with_discount = price - (price * discount / 100);
+		cout << price_with_discount;
+	}
+}
 //Задание 13 (блок 3)
 void TaskIndivid13_block3() {
 	double x, y, total;
@@ -582,6 +635,27 @@ void Task16_block3() {
 		cout << "Ход недопустим ни для одной фигуры" << endl;
 	}
 }
+//Задание 17 (блок 3)
+void Task17_block3() {
+	int min, hours;
+	cin >> min;
+	hours = min / 60;
+	if (hours >= 4 && hours <= 11) {
+		cout << "morning" << endl;
+	}
+	else if (hours >= 12 && hours <= 16) {
+		cout << "afternoon" << endl;
+	}
+	else if (hours >= 17 && hours <= 23) {
+		cout << "evening" << endl;
+	}
+	else if ((hours >= 0 || hours == 24) && hours <= 3) {
+		cout << "night" << endl;
+	}
+	else {
+		cout << "error" << endl;
+	}
+}
 
 
 
@@ -667,6 +741,68 @@ void Task5_block4() {
 	cout << "Число в системе с основанием " << osnovanie << ": ";
 	for (int i = index - 1; i >= 0; --i) {
 		cout << result[i];
+	}
+}
+//Задание 6 (блок 4)
+void Task6_block4() {
+	int n;
+	cin >> n;
+	int even_product = 1, odd_product = 1;
+	while (n > 0) {
+		int digit = n % 10;
+		if (digit % 2 == 0) {
+			even_product *= digit;
+		}
+		else {
+			odd_product *= digit;
+		}
+		n /= 10;
+	}
+	if (even_product == 1 && odd_product == 1) {
+		cout << "1 1";
+	}
+	else {
+		if (even_product == 1) {
+			cout << "1 ";
+		}
+		else {
+			cout << even_product << " ";
+		}
+		if (odd_product == 1) {
+			cout << "1";
+		}
+		else {
+			cout << odd_product;
+		}
+	}
+}
+//Задание 7 (блок 4)
+void Task7_block4() {
+	int N;
+	cin >> N;
+	for (int i = 1; i < N; ++i) {
+		cout << "Урожай растет. Прошло " << i << " д." << endl;
+	}
+	cout << "Урожай созрел!" << endl;
+}
+//Задание 8 (блок 4)
+void Task8_block4() {
+	int N;
+	cin >> N;
+	int a = 0, b = 1, m = 1;
+
+	while (b < N) {
+		int next = a + b;
+		a = b;
+		b = next;
+		m++;
+	}
+
+	if (b == N) {
+		cout << m;
+	}
+	else {
+		cout << "Число не является числом Фибоначчи.";
 	}
 }
 //Задание 9 (блок 4)
@@ -867,6 +1003,26 @@ void Task2_block6() {
 	if (t) cout << "В массиве есть элемент, являющийся степенью 2";
 	else cout << "Нужных элементов нет"; //1 считается степенью двойки
 }
+//Задание 12 (блок 6)
+void Task12_block6() {
+	int multiplication = 1;
+	int y = 0;
+	const int size = 10;
+	int the_number_of_the_first_negative_element = size;
+	int array[size]{ 1,5,4,2,6,1,-7,8,5,1 };
+	for (int i = 0; i < size; i++) {
+		if (array[i] < 0) {
+			the_number_of_the_first_negative_element = i;
+			break;
+		}
+	}
+	for (int i = 0; i < the_number_of_the_first_negative_element; i++) {
+		multiplication *= array[i];
+		y += multiplication;
+	}
+	cout << "Результат вычисления: y = " << y;
+
+}
 //Задание 13 (блок 6)
 void TaskIndivid13_block6() {
 	const int n = 5;
@@ -926,6 +1082,29 @@ void Task16_block6() {
 	cout << "Значение динамической переменной: " << *dyn << endl;
 	delete dyn;
 }
+//Задание 24 (блок 6)
+void Task24_block6() {
+	int max_duplicate = -100500;
+	const int size = 5;
+	int array[size]{ 10,4,1,10,1 };
+	for (int i = 0; i < size; i++) {
+		int count = 0;
+		for (int j = 0; j < size; j++) {
+			if (array[i] == array[j]) {
+				count++;
+			}
+		}
+		if (count > 1 && array[i] > max_duplicate) {
+			max_duplicate = array[i];
+		}
+	}
+	if (max_duplicate != 0) {
+		cout << "Максимальное число, встречающееся в массиве более одного раза: " << max_duplicate;
+	}
+	else {
+		cout << "В массиве нет чисел, встречающихся более одного раза";
+	}
+}
 //Задание 31 (блок 6)
 void Task31_block6() {
 	const int rows = 3;
@@ -959,7 +1138,7 @@ void Task2_block7() {
 	const int N = 3;
 	Zavod mas[N];
 	for (int i = 0; i < N; i++) {
-		cout << "Фамилия:" << endl;	
+		cout << "Фамилия:" << endl;
 		cin >> mas[i].fam;
 		cout << "Средний возраст:" << endl;
 		cin >> mas[i].vozrast;
@@ -1330,8 +1509,6 @@ int main()
 	TaskIndivid13_block2();*/
 	/*cout << "Задание № 14 (блок 2)" << endl;
 	Task14_block2();*/
-	/*cout << "Задание № 15 (блок 2)" << endl;
-	Task15_block2();*/
 
 
 
@@ -1353,6 +1530,12 @@ int main()
 	Task8_block3();*/
 	/*cout << "Задание № 9 (блок 3)" << endl;
 	Task9_block3();*/
+	/*cout << "Задание № 10 (блок 3)" << endl;
+	Task10_block3();*/
+	/*cout << "Задание № 11 (блок 3)" << endl;
+	Task11_block3();*/
+	/*cout << "Задание № 12 (блок 3)" << endl;
+	Task12_block3();*/
 	/*cout << "Задание № 13 (блок 3)" << endl;
 	TaskIndivid13_block3();*/
 	/*cout << "Задание № 14 (блок 3)" << endl;
@@ -1374,6 +1557,12 @@ int main()
 	Task4_block4();*/
 	/*cout << "Задание № 5 (блок 4)" << endl;
 	Task5_block4();*/
+	/*cout << "Задание № 6 (блок 4)" << endl;
+	Task6_block4();*/
+	/*cout << "Задание № 7 (блок 4)" << endl;
+	Task7_block4();*/
+	/*cout << "Задание № 8 (блок 4)" << endl;
+	Task8_block4();*/
 	/*cout << "Задание № 9 (блок 4)" << endl;
 	Task9_block4();*/
 	/*cout << "Задание № 11 (блок 4)" << endl;
@@ -1408,12 +1597,16 @@ int main()
 
 	/*cout << "Задание № 2 (блок 6)" << endl;
 	Task2_block6();*/
+	/*cout << "Задание № 12 (блок 6)" << endl;
+	Task12_block6();*/
 	/*cout << "Задание № 13 (блок 6)" << endl;
 	TaskIndivid13_block6();*/
 	/*cout << "Задание № 15 (блок 6)" << endl;
 	Task15_block6();*/
 	/*cout << "Задание № 16 (блок 6)" << endl;
 	Task16_block6();
+	/*cout << "Задание № 24 (блок 6)" << endl;
+	Task24_block6();
 	cout << "Задание № 31 (блок 6)" << endl;
 	Task31_block6();*/
 
