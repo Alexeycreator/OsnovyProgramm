@@ -289,15 +289,10 @@ void Task10_block2() {
 }
 //Задание 11 (блок 2)
 void Task11_block2() {
-	int choco, coffe, milk;
-	cout << "Введите стоимость плитоки шоколада: ";
-	cin >> choco;
-	cout << "Введите стоимость кофе: ";
-	cin >> coffe;
-	cout << "Введите стоимость пакета молока: ";
-	cin >> milk;
-	int sum_product = choco + coffe + milk;
-	cout << "Общая сумма покупки товаров: " << sum_product;
+	int a = 3, b = a + 3, c = a + b;
+	cout << "a=" << a << endl;
+	cout << "b=" << b << endl;
+	cout << "c=" << c << endl;
 }
 //Задание 12 (блок 2)
 void Task12_block2() {
@@ -843,6 +838,18 @@ void Task9_block4() {
 		}
 	} while (!f);
 }
+//Задание 10 (блок 4)
+void Task10_block4() {
+	int N = 4;
+	for (int i = 1; i <= N; ++i) {
+		if (i % 2 == 0) {
+			cout << "Я сдам все экзамены\n";
+		}
+		else {
+			cout << "Я успешно защищу диплом\n";
+		}
+	}
+}
 //Задание 11 (блок 4)
 void Task11_block4() {
 	int N;
@@ -977,6 +984,53 @@ void Task5_block5() {
 	int c = *ptr + ref; // сумма первых двух переменных через указатель и ссылку
 	cout << "Сумма первых двух переменных: " << c << endl;
 }
+//Задание 6 (блок 5)
+void Task6_block5() {
+	int a = 3, b = 4, c = 7;
+	int& _a = a;
+	int& _b = b;
+	int& _c = c;
+	int& min = _a;
+	if (_b < min) {
+		min = _b;
+	}
+	else if (_c < min) {
+		min = _c;
+	}
+	cout << "Минимальное значение: " << min << endl;
+}
+//Задание 7 (блок 5)
+void Task7_block5() {
+	int a = 5, b = 12, c = 7;
+	int* _a = &a;
+	int* _b = &b;
+	int* _c = &c;
+	int* min = &a;
+	if (_b < min) {
+		min = _b;
+	}
+	else if (_c < min) {
+		min = _c;
+	}
+	cout << "Наименьшее значение: " << *min << endl;
+}
+//Задание 8 (блок 5)
+void Task8_block5() {
+	const int n = 10;
+	int arr[n];
+	for (int i = 0; i < n; i++) {
+		arr[i] = 1 + rand() % 15;
+		cout << arr[i] << "\t";
+		//cin >> arr[i];
+	}
+	int* _max = &arr[0];
+	for (int i = 0; i < n; i++) {
+		if (_max < &arr[i]) {
+			_max = &arr[i];
+		}
+	}
+	cout << "\nМаксимальное значение в массиве = " << *_max << endl;
+}
 //Задание 9 (блок 5)
 void Task9_block5() {
 	int a = 5, b = 3, c;
@@ -984,6 +1038,17 @@ void Task9_block5() {
 	int& p2 = b;
 	c = (p1 + p2) * (p1 - p2);
 	cout << c;
+}
+//Задание 10 (блок 5)
+void Task10_block5() {
+	int x = 5;
+	int y = 10;
+	int& ref = x;
+	int* ptr = &y;
+	*ptr = *ptr * 2;
+	ref = ref * 2;
+	cout << "Значение переменной x после удвоения через ссылку: " << x << endl;
+	cout << "Значение переменной y после удвоения через указатель: " << y << endl;
 }
 
 
@@ -1544,6 +1609,8 @@ int main()
 	Task15_block3();*/
 	/*cout << "Задание № 16 (блок 3)" << endl;
 	Task16_block3();*/
+	/*cout << "Задание № 17 (блок 3)" << endl;
+	Task17_block3();*/
 
 
 
@@ -1565,6 +1632,8 @@ int main()
 	Task8_block4();*/
 	/*cout << "Задание № 9 (блок 4)" << endl;
 	Task9_block4();*/
+	/*cout << "Задание № 10 (блок 4)" << endl;
+	Task10_block4();*/
 	/*cout << "Задание № 11 (блок 4)" << endl;
 	Task11_block4();*/
 	/*cout << "Задание № 12 (блок 4)" << endl;
@@ -1590,8 +1659,16 @@ int main()
 	Task4_block5();*/
 	/*cout << "Задание № 5 (блок 5)" << endl;
 	Task5_block5();*/
+	/*cout << "Задание № 6 (блок 5)" << endl;
+	Task6_block5();*/
+	cout << "Задание № 7 (блок 5)" << endl;
+	Task7_block5();
+	cout << "Задание № 8 (блок 5)" << endl;
+	Task8_block5();
 	/*cout << "Задание № 9 (блок 5)" << endl;
 	Task9_block5();*/
+	cout << "Задание № 10 (блок 5)" << endl;
+	Task10_block5();
 
 
 
