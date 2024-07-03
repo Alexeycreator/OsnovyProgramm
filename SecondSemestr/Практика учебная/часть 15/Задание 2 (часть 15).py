@@ -1,5 +1,5 @@
 count = 0
-with open("C:\\Users\\Yaroslav\\Desktop\\pythonfile.txt", "r") as file:
+with open("C:\\Users\\Алексей\\Desktop\\Учеба\\github\\OsnovyProgramm\\SecondSemestr\\Практика учебная\\часть 15\\pythonfile.txt", "r") as file:
     for line in file:
         numbers = list(map(int, line.strip().split()))
         if len(numbers) == 4:

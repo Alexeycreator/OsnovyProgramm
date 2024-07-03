@@ -2,164 +2,164 @@
 #include <string>
 using namespace std;
 
-//
-////Задание 1 (блок 1)
-//void Task1_block1() {
-//	double v, v1, t1, t2, distance;
-//	cout << "Введите скорость лодки в стоячей воде (км/ч): ";
-//	cin >> v;
-//	cout << "Введите скорость течения реки (км/ч): ";
-//	cin >> v1;
-//	cout << "Введите время движения по озеру (ч): ";
-//	cin >> t1;
-//	cout << "Введите время движения против течения реки (ч): ";
-//	cin >> t2;
-//	distance = (v * t1) + (v - v1) * t2;
-//	cout << "Пройденный путь: " << distance << " км" << endl;
-//}
-////Задание 2 (блок 1)
-//void Task2_block1() {
-//	double kat1, kat2, hypotenuse;
-//	cout << "Введите первый катет: ";
-//	cin >> kat1;
-//	cout << "Введите второй катет: ";
-//	cin >> kat2;
-//	hypotenuse = sqrt(kat1 * kat1 + kat2 * kat2);
-//	cout << "Длинга гипотенузы = " << hypotenuse << endl;
-//}
-////Задание 3 (блок 1)
-//void Task3_block1() {
-//	char letter1, letter2;
-//	int position1, position2, distance;
-//	cout << "Введите первую букву: ";
-//	cin >> letter1;
-//	cout << "Введите вторую букву: ";
-//	cin >> letter2;
-//	// Получаем позиции букв в алфавите
-//	position1 = (int)letter1 - 'a' + 1;
-//	position2 = (int)letter2 - 'a' + 1;
-//	// Определяем расстояние между буквами
-//	distance = abs(position1 - position2) - 1;
-//	cout << "Первая буква находится на позиции: " << position1 << endl;
-//	cout << "Вторая буква находится на позиции: " << position2 << endl;
-//	cout << "Расстояние между буквами: " << distance << endl;
-//}
-////Задание 4 (блок 1)
-//void Task4_block1() {
-//	int position, check;
-//	char letter;
-//	cout << "Выберите алфавит (1 - английский, 2 - русский): ";
-//	cin >> check;
-//	if (check == 1) {
-//		cout << "Введите номер буквы в алфавите: ";
-//		cin >> position;
-//		// Проверка на корректность ввода
-//		if (position < 1 || position > 26) {
-//			cout << "Ошибка: некорректный номер. В английском алфавите 26 букв." << endl;
-//			return;
-//		}
-//		// Определение буквы по номеру
-//		letter = 'a' + position - 1;
-//		cout << "Буква с номером " << position << " в английском алфавите: " << letter << endl;
-//	}
-//	else if (check == 2) {
-//		cout << "Введите номер буквы в алфавите: ";
-//		cin >> position;
-//		// Проверка на корректность ввода
-//		if (position < 1 || position > 32) {
-//			cout << "Ошибка: некорректный номер. В русском алфавите 32 буквы." << endl;
-//			return;
-//		}
-//		// Определение буквы по номеру
-//		letter = 'а' + position - 1;
-//		cout << "Буква с номером " << position << " в русском алфавите: " << letter << endl;
-//	}
-//	else {
-//		cout << "Ошибка: Вы не выбрали алфавит" << endl;
-//		return;
-//	}
-//}
-////Задание 7 (блок 1)
-//void Task7_block1() {
-//	int dl, sh, S, P;
-//	cout << "Введите длину прямоугольника: ";
-//	cin >> dl;
-//	cout << "Ввеидите ширину прямоугольника: ";
-//	cin >> sh;
-//	S = dl * sh;
-//	P = (dl + sh) * 2;
-//	cout << "Площадь прямоугольника = " << S << endl << "Периметр прямоугольника = " << P << endl;
-//}
-////Задание 8 (блок 1)
-//void Task8_block1() {
-//	double r, S, dl;
-//	cout << "Введите радиус окружности: ";
-//	cin >> r;
-//	S = 3.14 * (r * r);
-//	cout << "Площадь окружности = " << S << endl;
-//	dl = 3.14 * r;
-//	cout << "Длина дуги окружности = " << dl << endl;
-//}
-////Задание 9 (блок 1)
-//void Task9_block1() {
-//	double Credit_sum, procent, every_mought, Total;
-//	int n, year;
-//	cout << "Введите сумму кредита (руб.): ";
-//	cin >> Credit_sum;
-//	cout << "Введите процентную ставку в год (%): ";
-//	cin >> procent;
-//	procent = procent / 100 / 12;
-//	cout << "Введите количество лет: ";
-//	cin >> year;
-//	n = year * 12;
-//	every_mought = (Credit_sum * procent * pow(1 + procent, n)) / (pow(1 + procent, n) - 1); // Ежемесячный аннуитетный платеж
-//	Total = every_mought * n;
-//	cout << "Ежемесячный платеж: " << every_mought << " руб." << endl;
-//	cout << "Суммарная выплата: " << Total << " руб." << endl;
-//}
-////Задание 13 (блок 1)
-//int SurfaceArea(int a, int b, int c) {
-//	int S;
-//	S = 2 * (a * b + b * c + a * c);
-//	return S;
-//}
-//int VolumeParallelepiped(int a, int b, int c) {
-//	int V;
-//	V = a * b * c;
-//	return V;
-//}
-//void TaskIndivid13_block1() {
-//	int a, b, c, _v, _s;
-//	cout << "Введите длину ребра a: ";
-//	cin >> a;
-//	cout << "Введите длину ребра b: ";
-//	cin >> b;
-//	cout << "Введите длину ребра c: ";
-//	cin >> c;
-//	_s = SurfaceArea(a, b, c);
-//	_v = VolumeParallelepiped(a, b, c);
-//	cout << "Площадь поверхности = " << _s << endl << "Объем параллепипеда = " << _v << endl;
-//}
-////Задание 14 (блок 1)
-//void Task14_block1() {
-//	int reb1, V, S;
-//	cout << "Введите длину ребра куба: ";
-//	cin >> reb1;
-//	V = reb1 * reb1 * reb1;
-//	S = 6 * (reb1 * reb1);
-//	cout << "Объем куба = " << V << endl << "Площадь куба = " << S << endl;
-//}
-////Задание 16 (блок 1)
-//double Calc(double x) {
-//	double y = 4 * pow((x - 3), 6) - 7 * pow((x - 3), 3) + 2;
-//	return y;
-//}
-//void Task16_block1() {
-//	double x = 4;
-//	double result = Calc(x);
-//	cout << "Ответ: " << result << endl;
-//
-//}
+/*
+//Задание 1 (блок 1)
+void Task1_block1() {
+	double v, v1, t1, t2, distance;
+	cout << "Введите скорость лодки в стоячей воде (км/ч): ";
+	cin >> v;
+	cout << "Введите скорость течения реки (км/ч): ";
+	cin >> v1;
+	cout << "Введите время движения по озеру (ч): ";
+	cin >> t1;
+	cout << "Введите время движения против течения реки (ч): ";
+	cin >> t2;
+	distance = (v * t1) + (v - v1) * t2;
+	cout << "Пройденный путь: " << distance << " км" << endl;
+}
+//Задание 2 (блок 1)
+void Task2_block1() {
+	double kat1, kat2, hypotenuse;
+	cout << "Введите первый катет: ";
+	cin >> kat1;
+	cout << "Введите второй катет: ";
+	cin >> kat2;
+	hypotenuse = sqrt(kat1 * kat1 + kat2 * kat2);
+	cout << "Длинга гипотенузы = " << hypotenuse << endl;
+}
+//Задание 3 (блок 1)
+void Task3_block1() {
+	char letter1, letter2;
+	int position1, position2, distance;
+	cout << "Введите первую букву: ";
+	cin >> letter1;
+	cout << "Введите вторую букву: ";
+	cin >> letter2;
+	// Получаем позиции букв в алфавите
+	position1 = (int)letter1 - 'a' + 1;
+	position2 = (int)letter2 - 'a' + 1;
+	// Определяем расстояние между буквами
+	distance = abs(position1 - position2) - 1;
+	cout << "Первая буква находится на позиции: " << position1 << endl;
+	cout << "Вторая буква находится на позиции: " << position2 << endl;
+	cout << "Расстояние между буквами: " << distance << endl;
+}
+//Задание 4 (блок 1)
+void Task4_block1() {
+	int position, check;
+	char letter;
+	cout << "Выберите алфавит (1 - английский, 2 - русский): ";
+	cin >> check;
+	if (check == 1) {
+		cout << "Введите номер буквы в алфавите: ";
+		cin >> position;
+		// Проверка на корректность ввода
+		if (position < 1 || position > 26) {
+			cout << "Ошибка: некорректный номер. В английском алфавите 26 букв." << endl;
+			return;
+		}
+		// Определение буквы по номеру
+		letter = 'a' + position - 1;
+		cout << "Буква с номером " << position << " в английском алфавите: " << letter << endl;
+	}
+	else if (check == 2) {
+		cout << "Введите номер буквы в алфавите: ";
+		cin >> position;
+		// Проверка на корректность ввода
+		if (position < 1 || position > 32) {
+			cout << "Ошибка: некорректный номер. В русском алфавите 32 буквы." << endl;
+			return;
+		}
+		// Определение буквы по номеру
+		letter = 'а' + position - 1;
+		cout << "Буква с номером " << position << " в русском алфавите: " << letter << endl;
+	}
+	else {
+		cout << "Ошибка: Вы не выбрали алфавит" << endl;
+		return;
+	}
+}
+//Задание 7 (блок 1)
+void Task7_block1() {
+	int dl, sh, S, P;
+	cout << "Введите длину прямоугольника: ";
+	cin >> dl;
+	cout << "Ввеидите ширину прямоугольника: ";
+	cin >> sh;
+	S = dl * sh;
+	P = (dl + sh) * 2;
+	cout << "Площадь прямоугольника = " << S << endl << "Периметр прямоугольника = " << P << endl;
+}
+//Задание 8 (блок 1)
+void Task8_block1() {
+	double r, S, dl;
+	cout << "Введите радиус окружности: ";
+	cin >> r;
+	S = 3.14 * (r * r);
+	cout << "Площадь окружности = " << S << endl;
+	dl = 3.14 * r;
+	cout << "Длина дуги окружности = " << dl << endl;
+}
+//Задание 9 (блок 1)
+void Task9_block1() {
+	double Credit_sum, procent, every_mought, Total;
+	int n, year;
+	cout << "Введите сумму кредита (руб.): ";
+	cin >> Credit_sum;
+	cout << "Введите процентную ставку в год (%): ";
+	cin >> procent;
+	procent = procent / 100 / 12;
+	cout << "Введите количество лет: ";
+	cin >> year;
+	n = year * 12;
+	every_mought = (Credit_sum * procent * pow(1 + procent, n)) / (pow(1 + procent, n) - 1); // Ежемесячный аннуитетный платеж
+	Total = every_mought * n;
+	cout << "Ежемесячный платеж: " << every_mought << " руб." << endl;
+	cout << "Суммарная выплата: " << Total << " руб." << endl;
+}
+//Задание 13 (блок 1)
+int SurfaceArea(int a, int b, int c) {
+	int S;
+	S = 2 * (a * b + b * c + a * c);
+	return S;
+}
+int VolumeParallelepiped(int a, int b, int c) {
+	int V;
+	V = a * b * c;
+	return V;
+}
+void TaskIndivid13_block1() {
+	int a, b, c, _v, _s;
+	cout << "Введите длину ребра a: ";
+	cin >> a;
+	cout << "Введите длину ребра b: ";
+	cin >> b;
+	cout << "Введите длину ребра c: ";
+	cin >> c;
+	_s = SurfaceArea(a, b, c);
+	_v = VolumeParallelepiped(a, b, c);
+	cout << "Площадь поверхности = " << _s << endl << "Объем параллепипеда = " << _v << endl;
+}
+//Задание 14 (блок 1)
+void Task14_block1() {
+	int reb1, V, S;
+	cout << "Введите длину ребра куба: ";
+	cin >> reb1;
+	V = reb1 * reb1 * reb1;
+	S = 6 * (reb1 * reb1);
+	cout << "Объем куба = " << V << endl << "Площадь куба = " << S << endl;
+}
+//Задание 16 (блок 1)
+double Calc(double x) {
+	double y = 4 * pow((x - 3), 6) - 7 * pow((x - 3), 3) + 2;
+	return y;
+}
+void Task16_block1() {
+	double x = 4;
+	double result = Calc(x);
+	cout << "Ответ: " << result << endl;
+}
+*/
 
 
 /*
@@ -2125,12 +2125,21 @@ void Task9_block7() {
 		}
 	}
 	cout << endl;
+	cout << "Введите название пункта: ";
+	string punkt;
+	cin >> punkt;
 	for (int i = 0; i < n; i++) {
-		cout << m[i].punkt << endl;
-		cout << m[i].num << endl;
-		cout << m[i].time[0] << endl;
-		cout << m[i].time[1] << endl;
+		if (punkt == m[i].punkt) {
+			cout << "Пункт назначения: " << m[i].punkt << endl;
+			cout << "Номер поезда: " << m[i].num << endl;
+			cout << "Время отправки: " << m[i].time[0] << "ч" << endl;
+			cout << "Время прибытия: " << m[i].time[1] << "ч" << endl;
+		}
+		else {
+			cout << "Таких поездов нет ";
+		}
 	}
+
 }
 //Задание 10 (блок 7)
 void Task10_block7() {
@@ -2241,7 +2250,7 @@ struct NOTE
 void SortedNotes(NOTE* student, int n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n - 1 - i; j++) {
-			if (student[j].fullName > student[j + 1].fullName) {
+			if ((student[j].date[0] > student[j + 1].date[0]) && (student[j].date[1] > student[j].date[1]) && (student[j].date[2] > student[j].date[2])) {
 				string temp = student[j].fullName;
 				student[j].fullName = student[j + 1].fullName;
 				student[j].fullName = temp;
@@ -2262,26 +2271,20 @@ void TaskIndivid13_block7() {
 		cin.ignore();
 	}
 	SortedNotes(student, n);
-	int month;
-	cout << "Введите номер месяца: ";
-	cin >> month;
-	if (month >= 1 && month <= 12) {
-		bool found = false;
-		for (int i = 0; i < n; i++) {
-			if (student[i].date[1] == month) {
-				found = true;
-				cout << "\nИнформация о человеке с днем рождения в " << month << " месяце:\n";
-				cout << "Фамилия, Имя: " << student[i].fullName << endl;
-				cout << "Номер телефона: " << student[i].phoneNumber << endl;
-				cout << "Дата рождения: " << student[i].date[0] << "." << student[i].date[1] << "." << student[i].date[2] << endl;
-			}
-		}
-		if (!found) {
-			cout << "Людей с днем рождения в указанном месяце нет." << endl;
+	string searchPhoneNumber;
+	cout << "Введите номер телефона для поиска: ";
+	cin >> searchPhoneNumber;
+	bool found = false;
+	for (int i = 0; i < n; i++) {
+		if (student[i].phoneNumber == searchPhoneNumber) {
+			found = true;
+			cout << "ФИО: " << student[i].fullName << "\n";
+			cout << "Номер телефона: " << student[i].phoneNumber << "\n";
+			cout << "Дата рождения: " << student[i].date[0] << "-" << student[i].date[1] << "-" << student[i].date[2] << "\n";
 		}
 	}
-	else {
-		cout << "Ошибка: данного месяца с таким номером не существует." << endl;
+	if (!found) {
+		cout << "Человек с таким номером телефона не найден.\n";
 	}
 }
 //Задание 14 (блок 7)
@@ -2843,7 +2846,7 @@ void Delete(Node*& head, int key) {
 				head = current->next;
 			}
 			prevNode->next = current->next;
-			current->next->data = prevNode;
+			//current->next->data = prevNode;
 			delete current;
 			return;
 		}
@@ -2950,8 +2953,8 @@ int main()
 
 	/*cout << "Задание № 1 (блок 4)" << endl;
 	Task4_block4();*/
-	/*cout << "Задание № 2 (блок 4)" << endl;
-	Task2_block4();*/
+	cout << "Задание № 2 (блок 4)" << endl;
+	Task2_block4();
 	/*cout << "Задание № 3 (блок 4)" << endl;
 	Task3_block4();*/
 	/*cout << "Задание № 4 (блок 4)" << endl;

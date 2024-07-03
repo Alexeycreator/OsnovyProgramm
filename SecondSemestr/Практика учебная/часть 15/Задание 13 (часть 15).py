@@ -9,6 +9,6 @@ def count_valid_rows(filename):
                 if 3 * sum(repeated_num) <= non_repeated_nums[0] * non_repeated_nums[1] * non_repeated_nums[2]:
                     count += 1
     return count
-filename = "table.txt"
+filename = "C:\\Users\\Алексей\\Desktop\\Учеба\\github\\OsnovyProgramm\\SecondSemestr\\Практика учебная\\часть 15\\table.txt"
 result = count_valid_rows(filename)
 print(f"Количество строк, удовлетворяющих условиям: {result}")
