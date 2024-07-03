@@ -7,11 +7,11 @@ def task2_tema13(string):
     return "".join([string[i] for i in range(len(string)) if i % 2 != 0])
 def task3_tema13(sentence):
     return len(sentence.split())
-def task4_tema13(string):
-    if string.count('х') == 1:
-        return string.index('х')
-    elif string.count('х') > 1:
-        return (string.index('х'), string.rindex('х'))
+def task4_tema13(string, x):
+    if string.count(x) == 1:
+        return string.index(x)
+    elif string.count(x) > 1:
+        return (string.index(x), string.rindex(x))
     else:
         return "NO"
 def task5_tema13(string):
@@ -95,21 +95,22 @@ def task21_tema13(string):
 # Пример использования:
 #print(task1_tema13(input(), input(), input()))
 #print(task2_tema13('произвольнаястрока'))
-print(task3_tema13("Карабли лавировали лавировали да так и не выловеравали"))
-print("Индекс буквы 'x=",task4_tema13('махмудик'))
-print(task5_tema13('азбукаzпримерzтест'))
-print(task6_tema13('абвгдежзийклмнопрст'))
-print(task7_tema13('аанааанас'))
-print("Слов начинающихся на букву б или Б:",task9_tema13('Бабушка готовила пирожки с борщевиком'))
-print(task10_tema13('программа'))
-print(task11_tema13('SстрокаSSсSSбуквойS'))
-print(task12_tema13('абвгдежзийклмнопрст'))
-print(task13_tema13('абракадабра'))
-print(task14_tema13('абракадабра'))
-print(task15_tema13('абра кадабра'))
-print(task16_tema13('абракадабра'))
-print(task17_tema13('Это строка с словами'))
-print(task18_tema13('ASwqe eee saasd wefdsa'))
-print(task19_tema13('aтопот'))
-print(task20_tema13('(()())'))
-print(task21_tema13('123456789'))
+#print(task3_tema13("Карабли лавировали лавировали да так и не выловеравали"))
+x = input("введите элемент который хотите найти: ")
+print(f"Индекс буквы {x} =",task4_tema13('махмудик', x))
+#print(task5_tema13('азбукаzпримерzтест'))
+#print(task6_tema13('абвгдежзийклмнопрст'))
+#print(task7_tema13('аанааанас'))
+#print("Слов начинающихся на букву б или Б:",task9_tema13('Бабушка готовила пирожки с борщевиком'))
+#print(task10_tema13('программа'))
+#print(task11_tema13('SстрокаSSсSSбуквойS'))
+#print(task12_tema13('абвгдежзийклмнопрст'))
+#print(task13_tema13('абракадабра'))
+#print(task14_tema13('абракадабра'))
+#print(task15_tema13('абра кадабра'))
+#print(task16_tema13('абракадабра'))
+#print(task17_tema13('Это строка с словами'))
+#print(task18_tema13('ASwqe eee saasd we'))
+#print(task19_tema13('aтопот'))
+#print(task20_tema13('(()())'))
+#print(task21_tema13('123456789'))

@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-/*
+
 //Задание 1 (блок 1)
 void Task1_block1() {
 	double v, v1, t1, t2, distance;
@@ -159,10 +159,10 @@ void Task16_block1() {
 	double result = Calc(x);
 	cout << "Ответ: " << result << endl;
 }
-*/
 
 
-/*
+
+
 //Задание 1 (блок 2)
 void Task1_block2() {
 	cout << "Hello Student!\n";
@@ -323,333 +323,333 @@ void Task14_block2() {
 	cin >> n;
 	cout << n * (n + 1) / 2 << "\n";
 }
-*/
 
 
-////Задание 1 (блок 3)
-//void Task1_block3() {
-//	int num1, num2, num3;
-//	cout << "Введите три целых числа: ";
-//	cin >> num1 >> num2 >> num3;
-//	if (num1 >= num2 and num1 >= num3) {
-//		cout << "Наибольшее число: " << num1 << endl;
-//	}
-//	else if (num2 >= num1 and num2 >= num3) {
-//		cout << "Наибольшее число: " << num2 << endl;
-//	}
-//	else {
-//		cout << "Наибольшее число: " << num3 << endl;
-//	}
-//}
-////Задание 2 (блок 3)
-//void Task2_block3() {
-//	int number;
-//	cout << "Введите число:" << endl;
-//	cin >> number;
-//	if (number % 2 == 0) {
-//		cout << "Число чётное";
-//	}
-//	else {
-//		cout << "Число нечётное";
-//	}
-//
-//}
-////Задание 3 (блок 3)
-//void Task3_block3() {
-//	int a;
-//	cout << "Введиет число: ";
-//	cin >> a;
-//	if (a % 3 == 0) {
-//		cout << "\nЧисло делится на 3" << endl;
-//	}
-//	else {
-//		cout << "\nНе делится!" << endl;
-//	}
-//}
-////Задание 4 (блок 3)
-//void Task4_block3() {
-//	double x, y, R;
-//	cout << "Введите координаты точки (x, y): ";
-//	cin >> x >> y;
-//	cout << "Введите радиус круга R: ";
-//	cin >> R;
-//	if (sqrt(pow(x, 2) + pow(y, 2)) <= pow(R, 2)) {
-//		cout << "Точка находится внутри круга.\n";
-//	}
-//	else {
-//		cout << "Точка находится за пределами круга.\n";
-//	}
-//}
-////Задание 5 (блок 3)
-//void Task5_block3() {
-//	float length, radius, diameter;
-//	cout << "Введите длину стороны квадрата: ";
-//	cin >> length;
-//	cout << "Введите радиус круга: ";
-//	cin >> radius;
-//	diameter = 2 * radius;
-//	if (diameter <= length) {
-//		cout << "Круг может быть вписан в квадрат." << endl;
-//	}
-//	else {
-//		cout << "Квадрат может быть вписан в круг." << endl;
-//	}
-//}
-////Задание 6 (блок 3)
-//void Task6_block3() {
-//	int a;
-//	cin >> a;
-//	if (a < 7) {
-//		cout << "Дошкольник";
-//	}
-//	else if (a < 21) {
-//		cout << "Ученик";
-//	}
-//	else if (a < 63) {
-//		cout << "Работующий";
-//	}
-//	else {
-//		cout << "Пенсионер";
-//	}
-//}
-////Задание 7 (блок 3)
-//void Task7_block3() {
-//	int a, b;
-//	cin >> a;
-//	cin >> b;
-//	if (a < b) {
-//		cout << a;
-//	}
-//	else if (b < a) {
-//		cout << b;
-//	}
-//	else {
-//		cout << "Числа равны";
-//	}
-//}
-////Задание 8 (блок 3)
-//void Task8_block3() {
-//	int N;
-//	cin >> N;
-//	if (N == 0) {
-//		cout << "Вы ввели ноль.";
-//	}
-//	else {
-//		if (N % 2 == 0)
-//		{
-//			cout << "N четное ";
-//		}
-//		else
-//		{
-//			cout << "N нечетное ";
-//		}
-//		if (N > 0)
-//		{
-//			cout << " и положительное. ";
-//		}
-//		else
-//		{
-//			cout << "и отрицательное.";
-//		}
-//
-//	}
-//}
-////Задание 9 (блок 3)
-//void Task9_block3() {
-//	int data;
-//	cout << "Введите число дня недели\n";
-//	cin >> data;
-//	if (data > 0 && data < 8) {
-//		if (data > 0 && data < 6) {
-//			cout << "Будний";
-//		}
-//		else {
-//			cout << "Выходной";
-//		}
-//	}
-//	else {
-//		cout << "Ошибка. Такого дня недели не существует!";
-//	}
-//}
-////Задание 10 (блок 3)
-//void Task10_block3() {
-//	cout << "task_3_variant10\n";
-//	string player1, player2;
-//	cin >> player1 >> player2;
-//	if (player1 == player2) {
-//		cout << "Ничья" << endl;
-//	}
-//	if ((player1 == "камень" && player2 == "ножницы") || (player1 == "ножницы" && player2 == "бумага") || (player1 == "бумага" && player2 == "камень"))
-//	{
-//		cout << "Игрок 1 выиграл" << endl;
-//	}
-//	else {
-//		cout << "Игрок 2 выиграл" << endl;
-//	}
-//}
-////Задание 11 (блок 3)
-//void Task11_block3() {
-//	string month;
-//	cin >> month;
-//	if ((month == "september") || (month == "october") || (month == "november")) {
-//		cout << "autumn" << endl;
-//	}
-//	else if ((month == "december") || (month == "january") || (month == "february")) {
-//		cout << "winter" << endl;
-//	}
-//	else if ((month == "june") || (month == "july") || (month == "august")) {
-//		cout << "summer" << endl;
-//	}
-//	else if ((month == "march") || (month == "april ") || (month == "may")) {
-//		cout << "spring" << endl;
-//	}
-//	else {
-//		cout << "error" << endl;
-//	}
-//
-//}
-////Задание 12 (блок 3)
-//void Task12_block3() {
-//	int price, discount;
-//	cout << "Цена на товар: ";
-//	cin >> price;
-//	cout << "Скидка в процентах: ";
-//	cin >> discount;
-//	if (price <= 150 && discount <= 50) {
-//		cout << "«Ошибка 1. Низкая цена» – если цена не превышает 150 руб., но скидка меньше или равна 50 %";
-//	}
-//	else if (price > 150 && discount > 50) {
-//		cout << "«Ошибка 2. Большая скидка» – если скидка больше 50 %, но цена превышает 150 руб.";
-//	}
-//	else if (price <= 150 && discount > 50) {
-//		cout << "«Ошибка 3. Оба условия» – если оба условия не соблюдаются";
-//	}
-//	else {
-//		float price_with_discount = price - (price * discount / 100);
-//		cout << price_with_discount;
-//	}
-//}
-////Задание 13 (блок 3)
-//void TaskIndivid13_block3() {
-//	double x, y, total;
-//	char check;
-//	cout << "Балл за экзамен: ";
-//	cin >> x;
-//	cout << "Балл за полугодие: ";
-//	cin >> y;
-//	total = (x + y) / 2;
-//	if (total >= 90.1 && total <= 100) {
-//		check = 'A';
-//		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
-//	}
-//	else if (total >= 74.4 && total <= 90) {
-//		check = 'B';
-//		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
-//	}
-//	else if (total >= 60.1 && total <= 74.3) {
-//		check = 'C';
-//		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
-//	}
-//	else {
-//		check = 'F';
-//		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
-//	}
-//}
-////Задание 14 (блок 3)
-//void Task14_block3() {
-//	double a, b, c;
-//	cin >> a >> b >> c;
-//	double discriminant = b * b - 4 * a * c;
-//	if (discriminant > 0) {
-//		double root1 = (-b + sqrt(discriminant)) / (2 * a);
-//		double root2 = (-b - sqrt(discriminant)) / (2 * a);
-//		cout << "Уравнение имеет два корня: D = " << discriminant << ". Первый корень = " << max(root1, root2) << ", второй корень = " << min(root1, root2) << ". Больший корень = " << max(root1, root2) << endl;
-//	}
-//	else if (discriminant == 0) {
-//		double root = -b / (2 * a);
-//		cout << "Уравнение имеет один корень: D = " << discriminant << ". Единственный корень = " << root << endl;
-//	}
-//	else {
-//		cout << "Уравнение не имеет корней: D = " << discriminant << ". Уравнение не имеет корней" << endl;
-//	}
-//}
-////Задание 15 (блок 3)
-//void Task15_block3() {
-//	cout << "Операторы ветвления языка с++\n";
-//	int distance, weight;
-//	cout << "Введите расстояние в километрах: ";
-//	cin >> distance;
-//	//int distance = 134;
-//	cout << "Введите вес посылки в килограммах: ";
-//	cin >> weight;
-//	//int weight = 40;
-//	int cost;
-//	if (distance < 10) {
-//		cost = 100 * weight;
-//	}
-//	else if (distance <= 50) {
-//		cost = 300 * weight;
-//	}
-//	else {
-//		cost = 750 * weight;
-//	}
-//	int delivery_time = distance / 60; // Время доставки в часах
-//	if (distance % 60 != 0) {
-//		delivery_time++; // Если есть остаток от деления, добавляем ещё один час
-//	}
-//	cout << "Доставка будет ехать ";
-//	if (delivery_time < 1) {
-//		cout << "меньше часа";
-//	}
-//	else if (delivery_time == 1) {
-//		cout << "ровно час";
-//	}
-//	else {
-//		cout << "больше часа";
-//	}
-//	cout << ", стоимость - " << cost << " руб." << endl;
-//}
-////Задание 16 (блок 3)
-//void Task16_block3() {
-//	char startCol, endCol;
-//	int startRow, endRow;
-//	cout << "Введите начальную позицию (буква и число): ";
-//	cin >> startCol >> startRow;
-//	cout << "Введите конечную позицию (буква и число): ";
-//	cin >> endCol >> endRow;
-//	int colDiff = abs(endCol - startCol);
-//	int rowDiff = abs(endRow - startRow);
-//	if ((colDiff == 1 && rowDiff == 2) || (colDiff == 2 && rowDiff == 1)) {
-//		cout << "Ход допустим для коня" << endl;
-//	}
-//	else if (tolower(startCol) == tolower(endCol) && (endRow - startRow == 1)) {
-//		cout << "Ход допустим для пешки" << endl;
-//	}
-//	else {
-//		cout << "Ход недопустим ни для одной фигуры" << endl;
-//	}
-//}
-////Задание 17 (блок 3)
-//void Task17_block3() {
-//	int min, hours;
-//	cin >> min;
-//	hours = min / 60;
-//	if (hours >= 4 && hours <= 11) {
-//		cout << "morning" << endl;
-//	}
-//	else if (hours >= 12 && hours <= 16) {
-//		cout << "afternoon" << endl;
-//	}
-//	else if (hours >= 17 && hours <= 23) {
-//		cout << "evening" << endl;
-//	}
-//	else if ((hours >= 0 || hours == 24) && hours <= 3) {
-//		cout << "night" << endl;
-//	}
-//	else {
-//		cout << "error" << endl;
-//	}
-//}
+
+//Задание 1 (блок 3)
+void Task1_block3() {
+	int num1, num2, num3;
+	cout << "Введите три целых числа: ";
+	cin >> num1 >> num2 >> num3;
+	if (num1 >= num2 and num1 >= num3) {
+		cout << "Наибольшее число: " << num1 << endl;
+	}
+	else if (num2 >= num1 and num2 >= num3) {
+		cout << "Наибольшее число: " << num2 << endl;
+	}
+	else {
+		cout << "Наибольшее число: " << num3 << endl;
+	}
+}
+//Задание 2 (блок 3)
+void Task2_block3() {
+	int number;
+	cout << "Введите число:" << endl;
+	cin >> number;
+	if (number % 2 == 0) {
+		cout << "Число чётное";
+	}
+	else {
+		cout << "Число нечётное";
+	}
+
+}
+//Задание 3 (блок 3)
+void Task3_block3() {
+	int a;
+	cout << "Введиет число: ";
+	cin >> a;
+	if (a % 3 == 0) {
+		cout << "\nЧисло делится на 3" << endl;
+	}
+	else {
+		cout << "\nНе делится!" << endl;
+	}
+}
+//Задание 4 (блок 3)
+void Task4_block3() {
+	double x, y, R;
+	cout << "Введите координаты точки (x, y): ";
+	cin >> x >> y;
+	cout << "Введите радиус круга R: ";
+	cin >> R;
+	if (sqrt(pow(x, 2) + pow(y, 2)) <= pow(R, 2)) {
+		cout << "Точка находится внутри круга.\n";
+	}
+	else {
+		cout << "Точка находится за пределами круга.\n";
+	}
+}
+//Задание 5 (блок 3)
+void Task5_block3() {
+	float length, radius, diameter;
+	cout << "Введите длину стороны квадрата: ";
+	cin >> length;
+	cout << "Введите радиус круга: ";
+	cin >> radius;
+	diameter = 2 * radius;
+	if (diameter <= length) {
+		cout << "Круг может быть вписан в квадрат." << endl;
+	}
+	else {
+		cout << "Квадрат может быть вписан в круг." << endl;
+	}
+}
+//Задание 6 (блок 3)
+void Task6_block3() {
+	int a;
+	cin >> a;
+	if (a < 7) {
+		cout << "Дошкольник";
+	}
+	else if (a < 21) {
+		cout << "Ученик";
+	}
+	else if (a < 63) {
+		cout << "Работующий";
+	}
+	else {
+		cout << "Пенсионер";
+	}
+}
+//Задание 7 (блок 3)
+void Task7_block3() {
+	int a, b;
+	cin >> a;
+	cin >> b;
+	if (a < b) {
+		cout << a;
+	}
+	else if (b < a) {
+		cout << b;
+	}
+	else {
+		cout << "Числа равны";
+	}
+}
+//Задание 8 (блок 3)
+void Task8_block3() {
+	int N;
+	cin >> N;
+	if (N == 0) {
+		cout << "Вы ввели ноль.";
+	}
+	else {
+		if (N % 2 == 0)
+		{
+			cout << "N четное ";
+		}
+		else
+		{
+			cout << "N нечетное ";
+		}
+		if (N > 0)
+		{
+			cout << " и положительное. ";
+		}
+		else
+		{
+			cout << "и отрицательное.";
+		}
+
+	}
+}
+//Задание 9 (блок 3)
+void Task9_block3() {
+	int data;
+	cout << "Введите число дня недели\n";
+	cin >> data;
+	if (data > 0 && data < 8) {
+		if (data > 0 && data < 6) {
+			cout << "Будний";
+		}
+		else {
+			cout << "Выходной";
+		}
+	}
+	else {
+		cout << "Ошибка. Такого дня недели не существует!";
+	}
+}
+//Задание 10 (блок 3)
+void Task10_block3() {
+	cout << "task_3_variant10\n";
+	string player1, player2;
+	cin >> player1 >> player2;
+	if (player1 == player2) {
+		cout << "Ничья" << endl;
+	}
+	if ((player1 == "камень" && player2 == "ножницы") || (player1 == "ножницы" && player2 == "бумага") || (player1 == "бумага" && player2 == "камень"))
+	{
+		cout << "Игрок 1 выиграл" << endl;
+	}
+	else {
+		cout << "Игрок 2 выиграл" << endl;
+	}
+}
+//Задание 11 (блок 3)
+void Task11_block3() {
+	string month;
+	cin >> month;
+	if ((month == "september") || (month == "october") || (month == "november")) {
+		cout << "autumn" << endl;
+	}
+	else if ((month == "december") || (month == "january") || (month == "february")) {
+		cout << "winter" << endl;
+	}
+	else if ((month == "june") || (month == "july") || (month == "august")) {
+		cout << "summer" << endl;
+	}
+	else if ((month == "march") || (month == "april ") || (month == "may")) {
+		cout << "spring" << endl;
+	}
+	else {
+		cout << "error" << endl;
+	}
+
+}
+//Задание 12 (блок 3)
+void Task12_block3() {
+	int price, discount;
+	cout << "Цена на товар: ";
+	cin >> price;
+	cout << "Скидка в процентах: ";
+	cin >> discount;
+	if (price <= 150 && discount <= 50) {
+		cout << "«Ошибка 1. Низкая цена» – если цена не превышает 150 руб., но скидка меньше или равна 50 %";
+	}
+	else if (price > 150 && discount > 50) {
+		cout << "«Ошибка 2. Большая скидка» – если скидка больше 50 %, но цена превышает 150 руб.";
+	}
+	else if (price <= 150 && discount > 50) {
+		cout << "«Ошибка 3. Оба условия» – если оба условия не соблюдаются";
+	}
+	else {
+		float price_with_discount = price - (price * discount / 100);
+		cout << price_with_discount;
+	}
+}
+//Задание 13 (блок 3)
+void TaskIndivid13_block3() {
+	double x, y, total;
+	char check;
+	cout << "Балл за экзамен: ";
+	cin >> x;
+	cout << "Балл за полугодие: ";
+	cin >> y;
+	total = (x + y) / 2;
+	if (total >= 90.1 && total <= 100) {
+		check = 'A';
+		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
+	}
+	else if (total >= 74.4 && total <= 90) {
+		check = 'B';
+		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
+	}
+	else if (total >= 60.1 && total <= 74.3) {
+		check = 'C';
+		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
+	}
+	else {
+		check = 'F';
+		cout << "Общий балл: " << total << endl << "Его оценка: " << check << endl;
+	}
+}
+//Задание 14 (блок 3)
+void Task14_block3() {
+	double a, b, c;
+	cin >> a >> b >> c;
+	double discriminant = b * b - 4 * a * c;
+	if (discriminant > 0) {
+		double root1 = (-b + sqrt(discriminant)) / (2 * a);
+		double root2 = (-b - sqrt(discriminant)) / (2 * a);
+		cout << "Уравнение имеет два корня: D = " << discriminant << ". Первый корень = " << max(root1, root2) << ", второй корень = " << min(root1, root2) << ". Больший корень = " << max(root1, root2) << endl;
+	}
+	else if (discriminant == 0) {
+		double root = -b / (2 * a);
+		cout << "Уравнение имеет один корень: D = " << discriminant << ". Единственный корень = " << root << endl;
+	}
+	else {
+		cout << "Уравнение не имеет корней: D = " << discriminant << ". Уравнение не имеет корней" << endl;
+	}
+}
+//Задание 15 (блок 3)
+void Task15_block3() {
+	cout << "Операторы ветвления языка с++\n";
+	int distance, weight;
+	cout << "Введите расстояние в километрах: ";
+	cin >> distance;
+	//int distance = 134;
+	cout << "Введите вес посылки в килограммах: ";
+	cin >> weight;
+	//int weight = 40;
+	int cost;
+	if (distance < 10) {
+		cost = 100 * weight;
+	}
+	else if (distance <= 50) {
+		cost = 300 * weight;
+	}
+	else {
+		cost = 750 * weight;
+	}
+	int delivery_time = distance / 60; // Время доставки в часах
+	if (distance % 60 != 0) {
+		delivery_time++; // Если есть остаток от деления, добавляем ещё один час
+	}
+	cout << "Доставка будет ехать ";
+	if (delivery_time < 1) {
+		cout << "меньше часа";
+	}
+	else if (delivery_time == 1) {
+		cout << "ровно час";
+	}
+	else {
+		cout << "больше часа";
+	}
+	cout << ", стоимость - " << cost << " руб." << endl;
+}
+//Задание 16 (блок 3)
+void Task16_block3() {
+	char startCol, endCol;
+	int startRow, endRow;
+	cout << "Введите начальную позицию (буква и число): ";
+	cin >> startCol >> startRow;
+	cout << "Введите конечную позицию (буква и число): ";
+	cin >> endCol >> endRow;
+	int colDiff = abs(endCol - startCol);
+	int rowDiff = abs(endRow - startRow);
+	if ((colDiff == 1 && rowDiff == 2) || (colDiff == 2 && rowDiff == 1)) {
+		cout << "Ход допустим для коня" << endl;
+	}
+	else if (tolower(startCol) == tolower(endCol) && (endRow - startRow == 1)) {
+		cout << "Ход допустим для пешки" << endl;
+	}
+	else {
+		cout << "Ход недопустим ни для одной фигуры" << endl;
+	}
+}
+//Задание 17 (блок 3)
+void Task17_block3() {
+	int min, hours;
+	cin >> min;
+	hours = min / 60;
+	if (hours >= 4 && hours <= 11) {
+		cout << "morning" << endl;
+	}
+	else if (hours >= 12 && hours <= 16) {
+		cout << "afternoon" << endl;
+	}
+	else if (hours >= 17 && hours <= 23) {
+		cout << "evening" << endl;
+	}
+	else if ((hours >= 0 || hours == 24) && hours <= 3) {
+		cout << "night" << endl;
+	}
+	else {
+		cout << "error" << endl;
+	}
+}
 
 
 
@@ -684,10 +684,10 @@ void Task2_block4() {
 		number /= 10;
 	}
 	if (originalNumber == reversedNumber) {
-		cout << originalNumber << " является палиндромом" << std::endl;
+		cout << originalNumber << " является палиндромом" << endl;
 	}
 	else {
-		cout << originalNumber << " не является палиндромом" << std::endl;
+		cout << originalNumber << " не является палиндромом" << endl;
 	}
 }
 //Задание 3 (блок 4)
@@ -2075,12 +2075,86 @@ void Task6_block7() {
 
 }
 //Задание 7 (блок 7)
+struct WORKER {
+	char name[20];
+	char work[20];
+	int year;
+};
 void Task7_block7() {
-
+	const int n = 6;
+	WORKER mas[n] = {};
+	for (int i = 0; i < n; i++) {
+		cout << "Фамилия и инициалы: " << endl;
+		cin >> mas[i].name;
+		cout << "Должность: " << endl;
+		cin >> mas[i].work;
+		cout << "Год поступления: " << endl;
+		cin >> mas[i].year;
+	}
+	WORKER temp = {};
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (strcmp(mas[i].name, mas[j].name) > 0) {
+				temp = mas[i];
+				mas[i] = mas[j];
+				mas[j] = temp;
+			}
+		}
+	}
+	int stazh;
+	bool found = false;
+	cout << "Введите желаемый стаж: " << endl;
+	cin >> stazh;
+	for (int i = 0; i < n; i++) {
+		if ((2024 - mas[i].year) >= stazh) {
+			found = true;
+			cout << "Фамилия и инициалы: " << endl;
+			cout << "Должность: " << endl;
+			cout << "Год поступления: " << endl;
+		}
+	}
+	if (!found) cout << "Таких работников нет" << endl;
 }
 //Задание 8 (блок 7)
+struct TRAIN2 {
+	char destination[20];
+	int number;
+	int time;
+};
 void Task8_block7() {
-
+	const int n = 10;
+	TRAIN2 mas[n] = {};
+	int right_time;
+	bool a = true;
+	for (int i = 0; i < n; i++) {
+		cout << "Пункт назначения: " << endl;
+		cin >> mas[i].destination;
+		cout << "Номер: " << endl;
+		cin >> mas[i].number;
+		cout << "Время: " << endl;
+		cin >> mas[i].time;
+	}
+	cout << "Введите желаемое время: " << endl;
+	cin >> right_time;
+	TRAIN2 temp;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (strcmp(mas[i].destination, mas[j].destination) > 0) {
+				temp = mas[i];
+				mas[i] = mas[j];
+				mas[j] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		if (mas[i].time > right_time) {
+			a = false;
+			cout << "Номер: " << mas[i].number << endl;
+		}
+	}
+	if (a) {
+		cout << "Подходящих поездов нет " << endl;
+	}
 }
 //Задание 9 (блок 7)
 struct train {
@@ -2143,7 +2217,43 @@ void Task9_block7() {
 }
 //Задание 10 (блок 7)
 void Task10_block7() {
-
+	const int n = 8;
+	TRAIN2 mas[n] = {};
+	bool b = true;
+	for (int i = 0; i < n; i++) {
+		cout << "Пункт назначения: " << endl;
+		cin >> mas[i].destination;
+		cout << "Номер: " << endl;
+		cin >> mas[i].number;
+		cout << "Время: " << endl;
+		cin >> mas[i].time;
+	}
+	for (int i = 0; i < n - 1; i++) {
+		int k = i;
+		for (int j = k + 1; j < n; j++) {
+			if (mas[j].number < mas[k].number) {
+				k = j;
+			}
+		}
+		TRAIN2 t = mas[i];
+		mas[i] = mas[k];
+		mas[k] = t;
+	}
+	int newNum;
+	cout << "" << endl;
+	cin >> newNum;
+	for (int i = 0; i < n; i++) {
+		if (newNum == mas[i].number) {
+			b = false;
+			cout << "Пункт назначения: " << endl;
+			cout << mas[i].destination << endl;
+			cout << "Номер: " << endl;
+			cout << mas[i].number << endl;
+			cout << "Время: " << endl;
+			cout << mas[i].time << endl;
+		}
+	}
+	if (b) cout << "Таких поездов нет" << endl;
 }
 //Задание 11 (блок 7)
 struct MARSH
@@ -2682,6 +2792,28 @@ int izvlS(elem*& s)
 	delete(tmp);
 	return a;
 }
+bool getElem(elem*& s) {
+	if (s != NULL) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+void Task4_block9_dop() {
+	elem* stack = { NULL };
+	for (int i = 0; i < 5; i++) {
+		AddStack(stack, i);
+	}
+	for (int i = 0; i < 5; i++) {
+		if (getElem(stack) != false) {
+			cout << izvlS(stack) << endl;
+		}
+		else {
+			cout << "Пустой!" << endl;
+		}
+	}
+}
 //Задание 5 (блок 9)
 struct Node2 {
 	int data;
@@ -2830,36 +2962,104 @@ void append_N(Node3*& head, int value) {
 //Задание 10 (блок 9)
 void Delete(Node*& head, int key) {
 	if (head == nullptr) {
-		cout << "Список пуст." << std::endl;
+		cout << "Список пуст." << endl;
 		return;
 	}
 	Node* current = head;
-	Node* prevNode = nullptr;
 	do {
 		if (current->data == key) {
-			if (current == head && current->next == head) { // Единственный элемент в списке
-				delete current;
-				head = nullptr;
-				return;
+			if (current == head) {
+				if (head->next == head) { // Единственный элемент в списке
+					delete head;
+					head = nullptr;
+					return;
+				}
+				else {
+					head = current->next;
+				}
 			}
-			else if (current == head) { // Удаляемый элемент является головой списка
-				head = current->next;
-			}
-			prevNode->next = current->next;
-			//current->next->data = prevNode;
+			current->next->next = current->next;
+			current->next->data = current->data;
 			delete current;
 			return;
 		}
-		prevNode = current;
 		current = current->next;
 	} while (current != head);
 	cout << "Элемент с ключом " << key << " не найден." << endl;
 }
 
 
+void task5_4() {
+	int a;
+	cout << "Введите число: ";
+	cin >> a;
+	int* p = &a;
+	*p *= 3;
+	cout << "Значение умноженное на 3: " << *p << endl;
+}
+void task8_1(int a, int b) {
+	cout << "Сумма чисел " << a << " и " << b << " = " << a + b << endl;
+}
+struct elem1 {
+	int a;
+	elem1* next;
+};
+struct Q {
+	elem1* h;
+	elem1* t;
+};
+void add(Q& q, int k) {
+	elem1* tmp = new elem1{ k,NULL };
+	if (q.h == NULL) {
+		q.h = tmp;
+		q.t = tmp;
+
+	}
+	else {
+		q.t->next = tmp;
+		q.t = tmp;
+	}
+}
+void izvl(elem1*& h) {
+	while (h->a % 2 != 0) {
+		h = h->next;
+	}
+}
+void print(elem1*& h) {
+	elem1* tmp = h;
+	while (tmp != NULL) {
+		cout << tmp->a << " ";
+		tmp = tmp->next;
+	}
+}
+void task9_1() {
+	Q q = { NULL,NULL };
+
+	int const n = 4;
+	int m[n];
+	for (int i = 0; i < n; i++) {
+		m[i] = rand() % 20;
+		add(q, m[i]);
+		cout << m[i] << " ";
+	}
+	izvl(q.h);
+	cout << endl;
+	print(q.h);
+}
+
 int main()
 {
 	setlocale(LC_ALL, "rus");
+	//TaskIndivid13_block7();
+	//task5_4();
+	//task8_1(2, 3);
+	task9_1();
+}
+	//setlocale(LC_ALL, "rus");
+
+
+
+	//Task4_block9_dop();
 	/*cout << "Задание № 1 (блок 1)" << endl;
 	Task1_block1();
 	cout << "Задание № 2 (блок 1)" << endl;
@@ -2951,10 +3151,10 @@ int main()
 
 
 
-	/*cout << "Задание № 1 (блок 4)" << endl;
-	Task4_block4();*/
-	cout << "Задание № 2 (блок 4)" << endl;
-	Task2_block4();
+	//cout << "Задание № 13 (блок 4)" << endl;
+	//TaskIndivid13_block6();
+	/*cout << "Задание № 2 (блок 4)" << endl;
+	Task2_block4();*/
 	/*cout << "Задание № 3 (блок 4)" << endl;
 	Task3_block4();*/
 	/*cout << "Задание № 4 (блок 4)" << endl;
@@ -3018,8 +3218,8 @@ int main()
 	Task5_block5();*/
 	/*cout << "Задание № 6 (блок 5)" << endl;
 	Task6_block5();*/
-	cout << "Задание № 7 (блок 5)" << endl;
-	Task7_block5();
+	//cout << "Задание № 7 (блок 5)" << endl;
+	//Task7_block5();
 	/*cout << "Задание № 8 (блок 5)" << endl;
 	Task8_block5();*/
 	/*cout << "Задание № 9 (блок 5)" << endl;
@@ -3070,4 +3270,4 @@ int main()
 	TaskIndivid3_block9();*/
 	/*cout << "Задание № 5 (блок 9)" << endl;
 	Task5_block9();*/
-}
+//}
