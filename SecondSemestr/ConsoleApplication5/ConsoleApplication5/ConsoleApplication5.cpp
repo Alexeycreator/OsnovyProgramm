@@ -1,24 +1,33 @@
 ﻿#include <iostream>
 #include <stdio.h>
+#include <fstream>
 
 using namespace std;
 
 //инициализация массива
-int InputMass(int* arr, int n) {
+double InputMass(double* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		arr[i] = 1 + rand() % 50;
 	}
 	return *arr;
 }
+//Для дробного примера
+double InputMass2(double* arr, int n) {
+	for (int i = 0; i < n; i++) {
+		arr[i] = 1.0 + static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / 49.0));
+		arr[i] += static_cast<double>(rand()) / RAND_MAX;
+	}
+	return *arr;
+}
 //вывод массива
-void PrintMass(int* arr, int n) {
+void PrintMass(double* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
 }
 //сортировка массива
-void SortMass(int* arr, int n) {
+void SortMass(double* arr, int n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n - 1; j++) {
 			if (arr[j] > arr[j + 1]) {
@@ -30,93 +39,75 @@ void SortMass(int* arr, int n) {
 	}
 }
 //запись массива в файл
-void WriteToFile(int* arr, int n, char* filePath) {
-	FILE* _writeToFile;
-	fopen_s(&_writeToFile, filePath, "w");
-	if (_writeToFile != NULL) {
+void WriteToFile(double* arr, int n, char* filePath) {
+	ofstream outFile(filePath);
+	if (outFile.is_open()) {
 		for (int i = 0; i < n; i++) {
-			fprintf(_writeToFile, "%d\t", arr[i]);
+			outFile << arr[i] << "\n";
 		}
-		fclose(_writeToFile);
+		outFile.close();
 		cout << "Массив записан в файл успешно!" << endl;
 	}
 	else {
 		cout << "Не удалось открыть файл!" << endl;
 	}
 }
-void WriteToFileForTask(FILE* file, FILE* outFile, char* filePath) {
-	int num;
-	fopen_s(&file, filePath, "r");
-	while (fscanf_s(file, "%d", &num) != EOF) {
-		fprintf_s(outFile, "%d", num);
-	}
-	cout << "Данные записаны в общий файл!" << endl;
-}
+//void WriteToFileForTask(FILE* file, FILE* outFile, char* filePath) {
+//	int num;
+//	fopen_s(&file, filePath, "r");
+//	while (fscanf_s(file, "%d", &num) != EOF) {
+//		fprintf_s(outFile, "%d", num);
+//	}
+//	cout << "Данные записаны в общий файл!" << endl;
+//}
 //запись слияния массива в файл
 void MergeWriteToFile(char* filePath1, char* filePath2, char* filePath3) {
-	FILE* file1, * file2, * outFile;
-	fopen_s(&file1, filePath1, "r");
-	fopen_s(&file2, filePath2, "r");
-	if (file1 == NULL || file2 == NULL) {
+	ifstream file1(filePath1);
+	ifstream file2(filePath2);
+	ofstream outFile(filePath3);
+	if (!file1.is_open() || !file2.is_open()) {
 		cout << "Ошибка открытия отдельных файлов!" << endl;
 		return;
 	}
-	fopen_s(&outFile, filePath3, "w");
-	int num1, num2;
-	if (fscanf_s(file1, "%d", &num1) == EOF) {
-		fclose(file2);
-		fopen_s(&file2, filePath2, "r");
-		while (fscanf_s(file2, "%d", &num2) != EOF) {
-			fprintf_s(outFile, "%d\t", num2);
+	double num1, num2;
+	bool file1Read = (bool)(file1 >> num1);
+	bool file2Read = (bool)(file2 >> num2);
+	while (file1Read && file2Read) {
+		if (num1 <= num2) {
+			outFile << num1 << endl;
+			file1Read = (bool)(file1 >> num1);
 		}
-		cout << "Данные из 2 файла записаны в общий файл!" << endl;
-		return;
-	}
-	else if (fscanf_s(file2, "%d", &num2) == EOF) {
-		fclose(file1);
-		fopen_s(&file1, filePath1, "r");
-		while (fscanf_s(file1, "%d", &num1) != EOF) {
-			fprintf_s(outFile, "%d\t", num1);
-		}
-		cout << "Данные из 1 файла записаны в общий файл!" << endl;
-		return;
-	}
-	else {
-		while (true) {
-			if (num1 <= num2) {
-				fprintf(outFile, "%d ", num1);
-				if (fscanf_s(file1, "%d", &num1) == EOF) {
-					fprintf(outFile, "%d\t ", num2);
-					break;
-				}
-			}
-			else {
-				fprintf(outFile, "%d ", num2);
-				if (fscanf_s(file2, "%d", &num2) == EOF) {
-					fprintf(outFile, "%d\t", num1);
-					break;
-				}
-			}
+		else {
+			outFile << num2 << endl;
+			file2Read = (bool)(file2 >> num2);
 		}
 	}
-	fclose(file1);
-	fclose(file2);
-	fclose(outFile);
+	while (file1Read) {
+		outFile << num1 << endl;
+		file1Read = (bool)(file1 >> num1);
+	}
+	while (file2Read) {
+		outFile << num2 << endl;
+		file2Read = (bool)(file2 >> num2);
+	}
+	cout << "Данные из файлов записаны в общий файл!" << endl;
+	file1.close();
+	file2.close();
+	outFile.close();
 }
 //Индивидуальное задание
 int Task6_WriteToFile(char* filePath) {
-	FILE* task6;
-	fopen_s(&task6, filePath, "r");
-	if (task6 == NULL) {
+	ifstream task6(filePath);
+	if (!task6.is_open()) {
 		cout << "Ошибка открытия файла, он пустой" << endl;
 		return -1;
 	}
 	int _count = 0;
 	char ch;
-	while ((ch = fgetc(task6)) != EOF && !isspace(ch)) {
+	while (task6.get(ch) && !isspace(ch)) {
 		_count++;
 	}
-	fclose(task6);
+	task6.close();
 	cout << "Количество символов в файле до первого пробела: " << _count << endl;
 	return _count;
 }
@@ -128,14 +119,14 @@ int main()
 	//Задание 1
 	const int n1 = 5;
 	const int n2 = 4;
-	int arr1[n1];
-	int arr2[n2];
+	double arr1[n1];
+	double arr2[n2];
 	cout << "Первый массив: ";
 	InputMass(arr1, n1);
 	PrintMass(arr1, n1);
 	cout << endl;
 	cout << "Второй массив: ";
-	InputMass(arr2, n2);
+	InputMass2(arr2, n2);
 	PrintMass(arr2, n2);
 	cout << endl;
 	cout << "Сортировка первого массива: ";

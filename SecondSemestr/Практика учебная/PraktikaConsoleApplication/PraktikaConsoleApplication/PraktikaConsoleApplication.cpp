@@ -680,7 +680,7 @@ void Task2_block4() {
 	originalNumber = number;
 	while (number != 0) {
 		remainder = number % 10;
-		reversedNumber = reversedNumber * 10 + remainder;
+		reversedNumber = reversedNumber * 10 + remainder; //перевернутое число, которое ввели, то и получили - палиндром
 		number /= 10;
 	}
 	if (originalNumber == reversedNumber) {
